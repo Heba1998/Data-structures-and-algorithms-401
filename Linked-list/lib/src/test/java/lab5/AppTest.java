@@ -18,7 +18,6 @@ class AppTest {
         String resultString = "{ 1 } -> { 2 } -> { 3 } -> NULL";
 
         assertEquals( resultString , testList.toString() );
-        /* ----   OR    ---- */
         assertEquals( 2 , testList.head.next.value );
         assertEquals( 3 , testList.head.next.next.value );
         assertEquals( null , testList.head.next.next.next );
@@ -29,18 +28,8 @@ class AppTest {
         testList1.insert(0);
         testList1.insert(2);
         testList1.insert(4);
-        LinkedList testList2 = new LinkedList();
-        testList2.insert(3);
-        testList2.insert(6);
-        testList2.insert(9);
-        LinkedList testList3 = new LinkedList();
-        testList3.insert(1);
-        testList3.insert(5);
-        testList3.insert(10);
 
         assertEquals( 4 , testList1.head.value );
-        assertEquals( 9 , testList2.head.value );
-        assertEquals( 10 , testList3.head.value );
     }
 
     @Test void multipleNode() {
@@ -66,4 +55,67 @@ class AppTest {
         testList.insert(7);
         String resultString = "{ 7 } -> { 4 } -> { 1 } -> NULL";
         assertEquals( resultString , testList.toString() );
-    }}
+    }
+
+
+    @Test void appendTest () {
+        LinkedList testList = new LinkedList();
+        testList.insert(0);
+        testList.insert(1);
+        testList.append(6);
+        String resultString = "{ 1 } -> { 0 } -> { 6 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void appendMultiTest () {
+        LinkedList testList = new LinkedList();
+        testList.insert(0);
+        testList.insert(1);
+        testList.append(6);
+        testList.append(7);
+        String resultString = "{ 1 } -> { 0 } -> { 6 } -> { 7 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void beforeMiddleTest () {
+        LinkedList testList = new LinkedList();
+        testList.append(5);
+        testList.append(7);
+        testList.append(8);
+        testList.insertBefore(7,6);
+        String resultString = "{ 5 } -> { 6 } -> { 7 } -> { 8 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void beforeFirstTest () {
+        LinkedList testList = new LinkedList();
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        testList.insertBefore(6,5);
+        String resultString = "{ 5 } -> { 6 } -> { 7 } -> { 8 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void afterMiddleTest () {
+        LinkedList testList = new LinkedList();
+        testList.append(6);
+        testList.append(7);
+        testList.append(9);
+        testList.insertAfter(7,8);
+        String resultString = "{ 6 } -> { 7 } -> { 8 } -> { 9 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void afterLastTest () {
+        LinkedList testList = new LinkedList();
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        testList.insertAfter(8,9);
+        String resultString = "{ 6 } -> { 7 } -> { 8 } -> { 9 } -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+
+}

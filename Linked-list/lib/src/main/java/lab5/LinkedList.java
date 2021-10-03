@@ -36,4 +36,56 @@ public class LinkedList {
         return result;
     }
 
+// ---------------------Code Challenge: Class 06------------------------------
+
+// Append
+    public void append(int value)  {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    // Insert Before
+    public void insertBefore(int value, int newValue) {
+        Node insertNodeBefore = new Node(newValue);
+        if (head == null) {
+            head = insertNodeBefore;
+        } else if (head.value == value) {
+            insert(newValue);
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                if (current.next.value == value) {
+                    insertNodeBefore.next = current.next;
+                    current.next = insertNodeBefore;
+                    break;
+                }
+                current = current.next;
+            }
+        }
+    }
+
+    // Insert After
+    public void insertAfter(int value, int newValue) {
+        Node insertNodeAfter = new Node(newValue);
+        if (head == null) {
+            head = insertNodeAfter;
+        } else {
+            Node current = head;
+            while (current != null) {
+                if (current.value == value) {
+                    insertNodeAfter.next = current.next;
+                    current.next = insertNodeAfter;
+                }
+                current = current.next;
+            }
+        }
+    }
 }
