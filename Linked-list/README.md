@@ -92,7 +92,7 @@ method to add a new node after the node that has a value equal to the accepted v
 
 ## Whiteboard Process
 
-![Append](./image/insertAfter.png)
+![After](./image/InsertAfter.png)
 
 ## Approach & Efficiency
 
@@ -123,7 +123,7 @@ public class App {
 
 Output:
 
-![out](./image/insertAfterTest.png)
+![output](./image/InsertAfterTest.png)
 
 # Insert Before Challenge
 
