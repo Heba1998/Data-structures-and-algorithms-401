@@ -82,6 +82,8 @@ Output:
 
 ![out](./image/Appendtest.png)
 
+
+
 # Insert After Challenge
 
 ## Challenge Summary
@@ -124,6 +126,8 @@ public class App {
 Output:
 
 ![output](./image/InsertAfterTest.png)
+
+
 
 # Insert Before Challenge
 
@@ -169,3 +173,55 @@ public class App {
 Output:
 
 ![out](./image/InsertbeforTest.png)
+
+
+
+# kth from end
+
+## Challenge Summary
+
+ ```
+method accept a value and return the node value that is k places from the tail of the linked list.
+```
+
+## Whiteboard Process
+
+![Append](./image/Kth.png)
+
+## Approach & Efficiency
+
+```
+while loop to iterate over the linked list nodes the complexity:time :O(N)
+```
+
+## Solution
+
+```java
+public class App {
+
+    public static void main(String[] args) {
+
+        LinkedList myList = new LinkedList();
+        Node current = myList.head;
+        myList.append(0);
+        myList.append(4);
+        myList.append(5);
+        myList.insertAfter(5, 6);
+        myList.insertAfter(6, 8);
+        myList.insertBefore(8, 7);
+        myList.insertBefore(4, 3);
+        //////////
+        System.out.println(myList.kthFromEnd(1));
+        System.out.println(myList.kthFromEnd(6));
+        System.out.println(myList.kthFromEnd(10));
+        System.out.println(myList.toString());
+        //////////
+    }
+}
+
+
+```
+
+Output:
+
+![out](./image/Kthtest.png)

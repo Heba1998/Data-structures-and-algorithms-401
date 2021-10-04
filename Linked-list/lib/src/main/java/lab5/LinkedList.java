@@ -88,4 +88,30 @@ public class LinkedList {
             }
         }
     }
+
+// challenge 7
+
+    public String kthFromEnd(int k) {
+        if (head == null) return "Exception";
+        Node current = head;
+        int counter = 0;
+        while (current.next != null) {
+            current = current.next;
+            counter++;
+        }
+        if (k > counter || k < 0) {
+            return "Exception";
+        } else {
+            current = head;
+            for (int i = 0; i <= counter-k; i++) {
+                if (i == counter-k) {
+                    System.out.printf(k +"th node from the last is: {"+current.value+"}");
+                    return "";
+                }
+                current = current.next;
+            }
+        }
+        return "Exception";
+    }
+
 }
