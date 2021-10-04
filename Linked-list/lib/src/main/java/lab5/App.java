@@ -7,7 +7,6 @@ public class App {
         LinkedList myList = new LinkedList();
         myList.insert(1);
         myList.insert(2);
-        Node current = myList.head;
 
         // ---------------------Code Challenge: Class 06------------------------------
         myList.append(0);
@@ -19,7 +18,7 @@ public class App {
         myList.insertBefore(4, 3);
         // ---------------------------------------------------
 
-
+        Node current = myList.head;
         while (current != null) {
             current = current.next;
         }
@@ -27,6 +26,10 @@ public class App {
         System.out.println(myList.includes(9));
         System.out.println(myList.includes(2));
 
+        // challenge 7
+        System.out.println(myList.kthFromEnd(1));
+        System.out.println(myList.kthFromEnd(6));
+        System.out.println(myList.kthFromEnd(10));
 
         System.out.println(myList.toString());
     }

@@ -118,4 +118,41 @@ class AppTest {
     }
 
 
+    // challenge 7
+
+    @Test void kthNegative () {
+        LinkedList testList = new LinkedList();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.append(4);
+        assertEquals( "Exception" , testList.kthFromEnd(-5) );
+    }
+
+    @Test void kthGreaterThanLength () {
+        LinkedList testList = new LinkedList();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.append(4);
+        assertEquals( "Exception" , testList.kthFromEnd(10) );
+    }
+
+    @Test void testlist () {
+        LinkedList testList = new LinkedList();
+        testList.append(4);
+        assertEquals( "{4}" , testList.kthFromEnd(0) );
+        assertEquals( "Exception" , testList.kthFromEnd(8) );
+    }
+
+    @Test void happyPath () {
+        LinkedList testList = new LinkedList();
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        testList.append(9);
+        testList.append(10);
+        assertEquals( "{10}" , testList.kthFromEnd(0) );
+    }
+
 }
