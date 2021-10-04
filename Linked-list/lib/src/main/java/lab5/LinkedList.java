@@ -105,8 +105,8 @@ public class LinkedList {
             current = head;
             for (int i = 0; i <= counter-k; i++) {
                 if (i == counter-k) {
-                    System.out.printf(k +"th node from the last is: {"+current.value+"}");
-                    return "";
+                    System.out.printf(k +"th node from the last is: ");
+                    return "{"+current.value+"}";
                 }
                 current = current.next;
             }
