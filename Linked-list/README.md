@@ -239,7 +239,6 @@ method responsible about zipping two linked list and return the head for the zip
 ## Whiteboard Process
 
 ![Append](./image/zippedlinkedlist.png)
-
 ## Approach & Efficiency
 
 ```
@@ -249,6 +248,7 @@ while loop to iterate over the linked list nodes the complexity:time :O(N)
 ## Solution
 
 ```java
+
  public Node zipLists(LinkedList list1, LinkedList list2) {
 
         if (list1.head == null && list2.head == null) return null;
