@@ -155,4 +155,63 @@ class AppTest {
         assertEquals( "{10}" , testList.kthFromEnd(0) );
     }
 
+
+
+    // 8
+
+    @Test void zipBothEmpty () {
+        LinkedList testList1 = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+
+        LinkedList newZippedList = new LinkedList();
+        newZippedList.head = testList1.zipLists(testList1,testList2);
+
+        assertEquals( null , newZippedList.head);
+    }
+
+    @Test void zipFirstIsEmpty () {
+        LinkedList testList1 = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+        testList2.append(1);
+        testList2.append(2);
+        testList2.append(3);
+
+        LinkedList newZippedList = new LinkedList();
+        newZippedList.head = testList1.zipLists(testList1,testList2);
+        String result = "{ 1 } -> { 2 } -> { 3 } -> NULL";
+
+        assertEquals( result , newZippedList.toString());
+    }
+
+    @Test void zipSecondIsEmpty () {
+        LinkedList testList1 = new LinkedList();
+        testList1.append(4);
+        testList1.append(5);
+        testList1.append(6);
+        LinkedList testList2 = new LinkedList();
+
+        LinkedList newZippedList = new LinkedList();
+        newZippedList.head = testList1.zipLists(testList1,testList2);
+        String result = "{ 4 } -> { 5 } -> { 6 } -> NULL";
+
+        assertEquals( result , newZippedList.toString());
+    }
+
+    @Test void zipHappyPath () {
+        LinkedList testList1 = new LinkedList();
+        testList1.append(1);
+        testList1.append(2);
+        testList1.append(3);
+        LinkedList testList2 = new LinkedList();
+        testList2.append(4);
+        testList2.append(5);
+        testList2.append(6);
+
+        LinkedList newZippedList = new LinkedList();
+        newZippedList.head = testList1.zipLists(testList1,testList2);
+        String result = "{ 1 } -> { 4 } -> { 2 } -> { 5 } -> { 3 } -> { 6 } -> NULL";
+
+        assertEquals( result , newZippedList.toString());
+    }
+
 }
