@@ -38,4 +38,21 @@ public class Queue<T> {
         if (front == null) return true;
         return false;
     }
+
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "null";
+        } else {
+            String list = "Front = ";
+            Node<T> node = front;
+            while (node != null){
+                list += node.getData()+ " -> ";
+                node = node.getNext();
+            }
+            list += "Null";
+            return list;
+        }
+    }
 }
