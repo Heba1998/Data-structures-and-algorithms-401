@@ -50,3 +50,50 @@ Create a Stack class that has a top property. It creates an empty Stack when ins
   * **dequeue:** Removes the node from the front of the queue.
   * **peek:** Returns the front of the queue.
   * **isEmpty:** Returns Boolean indicating whether the queue is empty.
+
+
+# Pseudo Queue
+
+## Challenge Summary
+Implement a Queue using two Stacks and apply enqueue and edqueue on it
+
+## Whiteboard Process
+
+![whiteboard](./PqueueWhiteboard.png)
+
+## Approach & Efficiency
+
+  * `enqueue` : Time: O(1) and Space: O(1)
+  * `dequeue` : Time: O(1) and Space: O(1)
+
+
+## Solution
+
+* Code:
+```java
+public class PseudoQueue<T> {
+       public Stack<T> Stack1 = new Stack<>();
+       public Stack<T> Stack2 = new Stack<>();
+
+    public void enqueue(T data) {
+        Stack1.push(data);
+        }
+
+
+        public T dequeue() {
+            {
+                while (!Stack1.isEmpty()){
+                    Stack2.push(Stack1.pop());
+                }
+                T firstElementPushed= Stack2.pop();
+                while (!Stack2.isEmpty()){
+                    Stack1.push(Stack2.pop());
+                }
+                return firstElementPushed;
+            }
+    }
+}
+```
+
+* Output:
+ ![output](./Pqueue.png)

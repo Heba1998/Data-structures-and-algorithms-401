@@ -14,7 +14,7 @@ class AppTest {
     assertEquals("The List is empty",stackList.pop());
     assertEquals("The List is empty",stackList.peek());
     stackList.push(2);
-    assertEquals( "Top = 2 -> Null" , stackList.toString());
+    assertEquals( "2 -> Null" , stackList.toString());
 }
 
 
@@ -23,7 +23,7 @@ class AppTest {
     List.push("A");
     List.push("B");
     List.push("C");
-    assertEquals( "Top = C -> B -> A -> Null" , List.toString());
+    assertEquals( "C -> B -> A -> Null" , List.toString());
 }
 
 
@@ -63,5 +63,44 @@ class AppTest {
         Stack<Integer> stackList = new Stack<>();
         assertEquals( "null" , stackList.toString());
     }
+
+
+
+
+//________________________PseudoQueue test_________________________________
+
+    @Test void PesudoQueue(){
+        PseudoQueue<Integer> test=new PseudoQueue<>();
+        test.enqueue(1);
+        test.enqueue(2);
+        test.enqueue(3);
+        test.enqueue(4);
+        assertEquals("Stack1= 4 -> 3 -> 2 -> 1 -> Null",test.toString());
+    }
+
+    @Test void PesudoQueue2(){
+        PseudoQueue<Integer> test=new PseudoQueue<>();
+        test.enqueue(1);
+        test.enqueue(2);
+        test.enqueue(3);
+        test.enqueue(4);
+        test.dequeue();
+        assertEquals("Stack1= 4 -> 3 -> 2 -> Null",test.toString());
+    }
+
+    @Test void PesudoQueue3(){
+        PseudoQueue<Integer> test=new PseudoQueue<>();
+        test.enqueue(1);
+        test.enqueue(2);
+        test.enqueue(3);
+        test.enqueue(4);
+        test.dequeue();
+        test.dequeue();
+        test.dequeue();
+        test.dequeue();
+        assertEquals("The list is empty",test.toString());
+    }
+
+
 
 }

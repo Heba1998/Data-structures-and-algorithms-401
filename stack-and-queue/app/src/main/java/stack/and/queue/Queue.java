@@ -22,7 +22,7 @@ public class Queue<T> {
 
     public T dequeue() {
         if (isEmpty()) {
-            return (T) "The List is empty";
+            return (T) "The Queue is empty";
         } else {
             T data = front.getData();
             front = front.getNext();
