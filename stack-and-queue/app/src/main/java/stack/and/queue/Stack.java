@@ -46,7 +46,7 @@ public class Stack<T> {
         if (isEmpty()) {
             return "null";
         } else {
-        String list = "Top = ";
+        String list = "";
         Node<T> node = top;
         while (node != null){
             list += node.getData()+ " -> ";
