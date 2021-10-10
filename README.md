@@ -15,3 +15,6 @@
 
 
 * [Stack and Queue](./stack-and-queue/README.md)
+
+
+* [stack-queue-pseudo](./stack-and-queue/README.md)
