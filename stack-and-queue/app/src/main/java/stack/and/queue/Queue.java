@@ -45,7 +45,7 @@ public class Queue<T> {
         if (isEmpty()) {
             return "null";
         } else {
-            String list = "Front = ";
+            String list = "";
             Node<T> node = front;
             while (node != null){
                 list += node.getData()+ " -> ";

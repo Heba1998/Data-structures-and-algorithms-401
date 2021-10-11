@@ -97,3 +97,61 @@ public class PseudoQueue<T> {
 
 * Output:
  ![output](./Pqueue.png)
+
+
+
+
+# AnimalShelter Queue
+
+## Challenge Summary
+Create method that accept animals from two type and shelter (seperate ) them to two list one for cats and one for dogs by using first in first out principle.
+
+## Whiteboard Process
+
+![whiteboard](./AnimalShelterWhite.png)
+
+## Approach & Efficiency
+
+* `enqueue` : Time: O(1) and Space: O(1)
+* `dequeue` : Time: O(1) and Space: O(1)
+
+
+## Solution
+
+* Code:
+```java
+public class AnimalShelter {
+
+  Queue catList = new Queue();
+  Queue dogList = new Queue();
+
+  public void enqueue(Animal animal) {
+    if (animal instanceof Cat) {
+      catList.enqueue(animal);
+    } else if (animal instanceof Dog) {
+      dogList.enqueue(animal);
+    }
+  }
+
+  public Object dequeue(String pref) {
+
+    if (pref.equals("cat")) {
+      if (catList.isEmpty()) {
+        return "empty list";
+      } else {
+        return catList.dequeue();
+      }
+    } else if (pref.equals("dog")) {
+      if (dogList.isEmpty()) {
+        return "empty list";
+      } else {
+        return dogList.dequeue();
+      }
+    }
+    return null;
+  }
+}
+```
+
+* Output:
+  ![output](./AnimalShelter.png)

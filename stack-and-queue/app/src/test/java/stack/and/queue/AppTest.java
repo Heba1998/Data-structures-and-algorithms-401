@@ -101,6 +101,37 @@ class AppTest {
         assertEquals("The list is empty",test.toString());
     }
 
+//________________________AnimalShelter test_________________________________
+    @Test void AnimalShelter1(){
+        AnimalShelter test = new AnimalShelter();
+        test.enqueue(new Cat("Cat1"));
+        test.enqueue(new Cat("Cat2"));
+        test.enqueue(new Cat("Cat3"));
+        test.dequeue("cat");
+        test.dequeue("cat");
+        test.dequeue("cat");
+        assertEquals("\ncatList=null" +
+                "\ndogList=null",test.toString());
+    }
 
+
+    @Test void AnimalShelter2(){
+        AnimalShelter test = new AnimalShelter();
+        test.enqueue(new Cat("Cat1"));
+        test.enqueue(new Cat("Cat2"));
+        test.enqueue(new Cat("Cat3"));
+        test.dequeue("cat");
+        test.dequeue("cat");
+
+
+        test.enqueue(new Dog("Dog1"));
+        test.enqueue(new Dog("Dog2"));
+        test.enqueue(new Dog("Dog3"));
+        test.dequeue("Dog");
+
+
+        assertEquals("\ncatList=Cat3 -> Null" +
+                "\ndogList=Dog1 -> Dog2 -> Dog3 -> Null",test.toString());
+    }
 
 }
