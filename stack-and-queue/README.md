@@ -95,7 +95,11 @@ public class PseudoQueue<T> {
 }
 ```
 
+
+
 * Output:
+
+
  ![output](./Pqueue.png)
 
 
@@ -153,5 +157,9 @@ public class AnimalShelter {
 }
 ```
 
+
+
 * Output:
+
+
   ![output](./AnimalShelter.png)
