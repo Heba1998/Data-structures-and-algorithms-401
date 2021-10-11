@@ -7,7 +7,8 @@ public class App {
     public static void main(String[] args) {
 //        stack();
 //        queue();
-        Pqueue();
+//        Pqueue();
+        AnimalShelter();
     }
 //    private static void stack() {
 //        Stack<String> Strstack = new Stack<>();
@@ -49,20 +50,35 @@ public class App {
 //        System.out.println(queue.dequeue());
 //        System.out.println(queue.dequeue()); // prints the queue is empty
 //    }
-    private static void Pqueue() {
-        PseudoQueue<Integer> q = new PseudoQueue<>();
-        q.enqueue(20);
-        q.enqueue(15);
-        q.enqueue(10);
-        System.out.println("----------------------PseudoQueue--------------------------");
-        System.out.println("\nOriginal List: " + q.Stack1.toString());
-        q.enqueue(5);
-        System.out.println("List when I enqueue(5): " + q.Stack1.toString());
+//    private static void Pqueue() {
+//        PseudoQueue<Integer> q = new PseudoQueue<>();
+//        q.enqueue(20);
+//        q.enqueue(15);
+//        q.enqueue(10);
+//        System.out.println("----------------------PseudoQueue--------------------------");
+//        System.out.println("\nOriginal List: " + q.Stack1.toString());
+//        q.enqueue(5);
+//        System.out.println("List when I enqueue(5): " + q.Stack1.toString());
+//
+//
+//        System.out.println("\nOriginal List: " + q.Stack1.toString());
+//        q.dequeue();
+//        System.out.println("List after first Dequeue: " + q.Stack1.toString());
+//
+//
+//    }
 
+    private static void AnimalShelter() {
+        AnimalShelter List = new AnimalShelter();
+        List.enqueue(new Cat("Cat1"));
+        List.enqueue(new Cat("Cat2"));
+        List.enqueue(new Cat("Cat3"));
+        List.dequeue("cat");
 
-        System.out.println("\nOriginal List: " + q.Stack1.toString());
-        q.dequeue();
-        System.out.println("List after first Dequeue: " + q.Stack1.toString());
+        List.enqueue(new Dog("Dog1"));
+        List.enqueue(new Dog("Dog2"));
+        List.dequeue("dog");
 
+        System.out.println(List);
     }
 }
