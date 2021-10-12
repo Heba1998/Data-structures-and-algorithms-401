@@ -18,3 +18,6 @@
 
 
 * [stack-queue-pseudo](./stack-and-queue/README.md)
+
+
+* [stack queue brackets](./stack-and-queue/README.md)

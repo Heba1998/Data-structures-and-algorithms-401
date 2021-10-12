@@ -134,4 +134,24 @@ class AppTest {
                 "\ndogList=Dog1 -> Dog2 -> Dog3 -> Null",test.toString());
     }
 
+
+    @Test void bracket(){
+        bracket test = new bracket();
+        String exp="{[]}";
+        assertEquals(true,
+                test.bracket(exp));
+
+        String exp1="{";
+        assertEquals(false,
+                test.bracket(exp1));
+
+        String exp2="[}";
+        assertEquals(false,
+                test.bracket(exp2));
+
+        String exp3="{}{Code}[Fellows](())";
+        assertEquals(true,
+                test.bracket(exp3));
+    }
+
 }

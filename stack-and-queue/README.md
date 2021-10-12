@@ -163,3 +163,64 @@ public class AnimalShelter {
 
 
   ![output](./AnimalShelter.png)
+
+
+
+
+# Multi-bracket Validation.
+
+## Challenge Summary
+Create function called validate brackets representing whether or not the brackets in the string are balanced
+
+## Whiteboard Process
+
+![whiteboard](./bracketValidationWhite.png)
+
+## Approach & Efficiency
+
+Time Complexity: O(n)
+Auxiliary Space: O(n) for stack.
+
+
+## Solution
+
+* Code:
+```java
+static boolean bracket(String expr){
+    Stack<Character> stack= new Stack<>();
+
+        for (int i = 0; i < expr.length(); i++){
+        char x = expr.charAt(i);
+
+        if (x == '(' || x == '[' || x == '{'){
+        stack.push(x);
+        continue;
+        }
+
+        if (stack.isEmpty())
+        return false;
+        char check;
+
+        if (x==')'){
+        check = stack.pop();
+        if (check == '{' || check == '[')
+        return false;
+        }else if(x=='}'){
+        check = stack.pop();
+        if (check == '(' || check == '[')
+        return false;
+        }else if(x==']'){
+        check = stack.pop();
+        if (check == '(' || check == '{')
+        return false;
+        }}
+        return (stack.isEmpty());
+        }
+```
+
+
+
+* Output:
+
+
+![output](./bracketValidationout.png)
