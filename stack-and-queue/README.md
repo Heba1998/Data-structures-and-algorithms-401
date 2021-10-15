@@ -95,5 +95,132 @@ public class PseudoQueue<T> {
 }
 ```
 
+
+
 * Output:
+
+
  ![output](./Pqueue.png)
+
+
+
+
+# AnimalShelter Queue
+
+## Challenge Summary
+Create method that accept animals from two type and shelter (seperate ) them to two list one for cats and one for dogs by using first in first out principle.
+
+## Whiteboard Process
+
+![whiteboard](./AnimalShelterWhite.png)
+
+## Approach & Efficiency
+
+* `enqueue` : Time: O(1) and Space: O(1)
+* `dequeue` : Time: O(1) and Space: O(1)
+
+
+## Solution
+
+* Code:
+```java
+public class AnimalShelter {
+
+  Queue catList = new Queue();
+  Queue dogList = new Queue();
+
+  public void enqueue(Animal animal) {
+    if (animal instanceof Cat) {
+      catList.enqueue(animal);
+    } else if (animal instanceof Dog) {
+      dogList.enqueue(animal);
+    }
+  }
+
+  public Object dequeue(String pref) {
+
+    if (pref.equals("cat")) {
+      if (catList.isEmpty()) {
+        return "empty list";
+      } else {
+        return catList.dequeue();
+      }
+    } else if (pref.equals("dog")) {
+      if (dogList.isEmpty()) {
+        return "empty list";
+      } else {
+        return dogList.dequeue();
+      }
+    }
+    return null;
+  }
+}
+```
+
+
+
+* Output:
+
+
+  ![output](./AnimalShelter.png)
+
+
+
+
+# Multi-bracket Validation.
+
+## Challenge Summary
+Create function called validate brackets representing whether or not the brackets in the string are balanced
+
+## Whiteboard Process
+
+![whiteboard](./bracketValidationWhite.png)
+
+## Approach & Efficiency
+
+Time Complexity: O(n)
+Auxiliary Space: O(n) for stack.
+
+
+## Solution
+
+* Code:
+```java
+static boolean bracket(String expr){
+    Stack<Character> stack= new Stack<>();
+
+        for (int i = 0; i < expr.length(); i++){
+        char x = expr.charAt(i);
+
+        if (x == '(' || x == '[' || x == '{'){
+        stack.push(x);
+        continue;
+        }
+
+        if (stack.isEmpty())
+        return false;
+        char check;
+
+        if (x==')'){
+        check = stack.pop();
+        if (check == '{' || check == '[')
+        return false;
+        }else if(x=='}'){
+        check = stack.pop();
+        if (check == '(' || check == '[')
+        return false;
+        }else if(x==']'){
+        check = stack.pop();
+        if (check == '(' || check == '{')
+        return false;
+        }}
+        return (stack.isEmpty());
+        }
+```
+
+
+
+* Output:
+
+
+![output](./bracketValidationout.png)

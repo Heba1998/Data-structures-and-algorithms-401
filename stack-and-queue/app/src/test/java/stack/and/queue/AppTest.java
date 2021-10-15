@@ -101,6 +101,57 @@ class AppTest {
         assertEquals("The list is empty",test.toString());
     }
 
+//________________________AnimalShelter test_________________________________
+    @Test void AnimalShelter1(){
+        AnimalShelter test = new AnimalShelter();
+        test.enqueue(new Cat("Cat1"));
+        test.enqueue(new Cat("Cat2"));
+        test.enqueue(new Cat("Cat3"));
+        test.dequeue("cat");
+        test.dequeue("cat");
+        test.dequeue("cat");
+        assertEquals("\ncatList=null" +
+                "\ndogList=null",test.toString());
+    }
 
+
+    @Test void AnimalShelter2(){
+        AnimalShelter test = new AnimalShelter();
+        test.enqueue(new Cat("Cat1"));
+        test.enqueue(new Cat("Cat2"));
+        test.enqueue(new Cat("Cat3"));
+        test.dequeue("cat");
+        test.dequeue("cat");
+
+
+        test.enqueue(new Dog("Dog1"));
+        test.enqueue(new Dog("Dog2"));
+        test.enqueue(new Dog("Dog3"));
+        test.dequeue("Dog");
+
+
+        assertEquals("\ncatList=Cat3 -> Null" +
+                "\ndogList=Dog1 -> Dog2 -> Dog3 -> Null",test.toString());
+    }
+
+
+    @Test void bracket(){
+        bracket test = new bracket();
+        String exp="{[]}";
+        assertEquals(true,
+                test.bracket(exp));
+
+        String exp1="{";
+        assertEquals(false,
+                test.bracket(exp1));
+
+        String exp2="[}";
+        assertEquals(false,
+                test.bracket(exp2));
+
+        String exp3="{}{Code}[Fellows](())";
+        assertEquals(true,
+                test.bracket(exp3));
+    }
 
 }

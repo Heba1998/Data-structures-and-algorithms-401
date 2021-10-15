@@ -7,48 +7,50 @@ public class App {
     public static void main(String[] args) {
 //        stack();
 //        queue();
-        Pqueue();
+//        Pqueue();
+//        AnimalShelter();
+        bracket();
     }
-//    private static void stack() {
-//        Stack<String> Strstack = new Stack<>();
-//        Strstack.push("H");
-//        Strstack.push("e");
-//        Strstack.push("b");
-//        Strstack.push("a");
-//        System.out.println("\n_________________String stack______________");
-//        System.out.println("The top of the String stack is => " + Strstack.peek());
-//        System.out.println(Strstack.pop());
-//        System.out.println(Strstack.pop());
-//        System.out.println(Strstack.pop());
-//        System.out.println(Strstack.pop());
-//        System.out.println(Strstack.pop()); // stack empty
-//
-//        Stack<Integer> Intstack = new Stack<>();
-//        Intstack.push(1);
-//        Intstack.push(2);
-//        Intstack.push(3);
-//        Intstack.push(4);
-//        System.out.println("\n_________________Integer stack______________");
-//        System.out.println("The top of the Integer stack is => " + Intstack.peek());
-//        System.out.println(Intstack.pop());
-//        System.out.println(Intstack.pop());
-//        System.out.println(Intstack.pop());
-//        System.out.println(Intstack.pop());
-//        System.out.println(Intstack.pop()); // stack empty
-//    }
-//    private static void queue() {
-//        Queue<String> queue = new Queue<>();
-//        queue.enqueue("H");
-//        queue.enqueue("e");
-//        queue.enqueue("b");
-//        queue.enqueue("a");
-//        System.out.println("\nThe front of the Queue is => " + queue.peek()); // prints O
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue()); // prints the queue is empty
-//    }
+    private static void stack() {
+        Stack<String> Strstack = new Stack<>();
+        Strstack.push("H");
+        Strstack.push("e");
+        Strstack.push("b");
+        Strstack.push("a");
+        System.out.println("\n_________________String stack______________");
+        System.out.println("The top of the String stack is => " + Strstack.peek());
+        System.out.println(Strstack.pop());
+        System.out.println(Strstack.pop());
+        System.out.println(Strstack.pop());
+        System.out.println(Strstack.pop());
+        System.out.println(Strstack.pop()); // stack empty
+
+        Stack<Integer> Intstack = new Stack<>();
+        Intstack.push(1);
+        Intstack.push(2);
+        Intstack.push(3);
+        Intstack.push(4);
+        System.out.println("\n_________________Integer stack______________");
+        System.out.println("The top of the Integer stack is => " + Intstack.peek());
+        System.out.println(Intstack.pop());
+        System.out.println(Intstack.pop());
+        System.out.println(Intstack.pop());
+        System.out.println(Intstack.pop());
+        System.out.println(Intstack.pop()); // stack empty
+    }
+    private static void queue() {
+        Queue<String> queue = new Queue<>();
+        queue.enqueue("H");
+        queue.enqueue("e");
+        queue.enqueue("b");
+        queue.enqueue("a");
+        System.out.println("\nThe front of the Queue is => " + queue.peek()); // prints O
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue()); // prints the queue is empty
+    }
     private static void Pqueue() {
         PseudoQueue<Integer> q = new PseudoQueue<>();
         q.enqueue(20);
@@ -64,5 +66,29 @@ public class App {
         q.dequeue();
         System.out.println("List after first Dequeue: " + q.Stack1.toString());
 
+
+    }
+
+    private static void AnimalShelter() {
+        AnimalShelter List = new AnimalShelter();
+        List.enqueue(new Cat("Cat1"));
+        List.enqueue(new Cat("Cat2"));
+        List.enqueue(new Cat("Cat3"));
+        List.dequeue("cat");
+
+        List.enqueue(new Dog("Dog1"));
+        List.enqueue(new Dog("Dog2"));
+        List.dequeue("dog");
+
+        System.out.println(List);
+    }
+
+
+    private static void bracket() {
+        bracket exp=new bracket();
+        String expValue="{([])}";
+        System.out.println("\n_________________Multi-bracket Validation______________");
+        System.out.println("The result for {([])} is :  "+exp.bracket(expValue));
+        System.out.println("________________________________________________________");
     }
 }
