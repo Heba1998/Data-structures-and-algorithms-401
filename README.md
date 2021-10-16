@@ -20,5 +20,5 @@
 * [stack-queue-pseudo](./stack-and-queue/README.md)
 
 
-* [Trees](./trees/README.md)
+* [Trees](trees/README.md)
 
