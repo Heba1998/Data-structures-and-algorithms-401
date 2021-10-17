@@ -34,3 +34,50 @@
 * `Binary Search Tree class`
   * `Add` to add a node hold the accepted value to the proper position inside the tree
   * `Contains` that checks if the tree has the node with accepted value
+
+
+# maximum value in the tree
+
+## Challenge Summary
+Write a function called maximumValue Find the maximum value stored in the tree.
+
+## Whiteboard Process
+
+![maximum value](./MaximumValue.png)
+
+## Approach & Efficiency
+
+* Time Complexity: O(N)
+* Space Complexity: O(N).
+
+## Solution
+
+* Code:
+
+```java
+
+public int MaxValue(Node current){
+    if (isEmpty()) {
+        return 0;
+    } else
+    {
+        int left;
+        int right;
+        int max = (int) current.getData();
+
+        if(current.getLeftNode() != null){
+            left = MaxValue(current.getLeftNode());
+            max = Math.max(max, left);
+        }
+
+        if(current.getRightNode() != null){
+            right = MaxValue(current.getRightNode());
+            max = Math.max(max, right);
+        }
+        return max;
+    }
+```
+
+* Output:
+
+![Output](./Max.png)

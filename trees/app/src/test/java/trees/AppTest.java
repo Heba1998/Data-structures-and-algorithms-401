@@ -100,4 +100,18 @@ class AppTest {
         assertTrue(binarySearchTree.contains(50));
     }
 
+// Max value
+    @Test
+    void Maxvalue(){
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        assertEquals(0, binarySearchTree.MaxValue(binarySearchTree.root));
+        binarySearchTree.Add(50);
+        binarySearchTree.Add(10);
+        binarySearchTree.Add(60);
+        binarySearchTree.Add(30);
+        binarySearchTree.Add(90);
+        binarySearchTree.Add(80);
+        assertEquals(90, binarySearchTree.MaxValue(binarySearchTree.root));
+    }
+
 }
