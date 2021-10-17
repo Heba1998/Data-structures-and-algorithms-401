@@ -52,11 +52,9 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
 
     }
 
+
     public Node<T> getRoot() {
         return root;
     }
-
-
-
 
 }
