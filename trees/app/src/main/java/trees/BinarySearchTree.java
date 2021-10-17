@@ -57,4 +57,29 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
         return root;
     }
 
+
+    public int MaxValue(Node current){
+        if (isEmpty()) {
+            return 0;
+        } else
+        {
+            int left;
+            int right;
+            int max = (int) current.getData();
+
+            if(current.getLeftNode() != null){
+                left = MaxValue(current.getLeftNode());
+                max = Math.max(max, left);
+            }
+
+            if(current.getRightNode() != null){
+                right = MaxValue(current.getRightNode());
+                max = Math.max(max, right);
+            }
+            return max;
+        }
+
+
+    }
+
 }

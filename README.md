@@ -22,3 +22,6 @@
 
 * [Trees](trees/README.md)
 
+
+* [maximum value in the tree](trees/MaximumValue.png)
+

@@ -25,5 +25,7 @@ public class App {
         System.out.println("The tree contains 50? " + binarySearchTree.contains(50));
         System.out.println("The tree contains 10? " + binarySearchTree.contains(10));
 
+        System.out.println("___________________________________MaxValue________________________________________");
+        System.out.println("The Maximum Value in a Binary Tree: " + binarySearchTree.MaxValue(binarySearchTree.root));
     }
 }
