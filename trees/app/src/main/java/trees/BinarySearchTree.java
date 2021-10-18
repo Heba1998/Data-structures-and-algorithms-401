@@ -1,5 +1,8 @@
 package trees;
 
+
+import java.util.ArrayList;
+
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     public Node<T> root;
 
@@ -61,25 +64,42 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     public int MaxValue(Node current){
         if (isEmpty()) {
             return 0;
-        } else
-        {
+        } else {
             int left;
             int right;
             int max = (int) current.getData();
 
-            if(current.getLeftNode() != null){
+            if (current.getLeftNode() != null) {
                 left = MaxValue(current.getLeftNode());
                 max = Math.max(max, left);
             }
 
-            if(current.getRightNode() != null){
+            if (current.getRightNode() != null) {
                 right = MaxValue(current.getRightNode());
                 max = Math.max(max, right);
             }
             return max;
         }
-
-
     }
+
+
+    ArrayList <Object> BreadthFirstL=new ArrayList<>();
+    public ArrayList BreadthFirst(Node root){
+        if (root!=null){
+            Queue<Node> breath=new Queue();
+            breath.enqueue(root);
+            while (!breath.isEmpty()){
+                Node front=  breath.dequeue();
+                BreadthFirstL.add(front.getData());
+                if (front.getLeftNode() !=null)
+                    breath.enqueue(front.getLeftNode());
+                if (front.getRightNode() !=null)
+                    breath.enqueue(front.getRightNode());
+            }
+            return BreadthFirstL;
+        }
+        else return null;
+    }
+
 
 }
