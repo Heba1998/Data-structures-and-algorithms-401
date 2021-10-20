@@ -15,6 +15,7 @@ public class App {
         binarySearchTree.Add(90);
         binarySearchTree.Add(80);
 
+
         System.out.println("Preorder result: " + binarySearchTree.preOrder(binarySearchTree.root));
         System.out.println("InOrder result: " + binarySearchTree.inOrder(binarySearchTree.root));
         System.out.println("Postorder result: " + binarySearchTree.postOrder(binarySearchTree.root));
@@ -27,5 +28,11 @@ public class App {
 
         System.out.println("___________________________________MaxValue________________________________________");
         System.out.println("The Maximum Value in a Binary Tree: " + binarySearchTree.MaxValue(binarySearchTree.root));
+
+
+        System.out.println("\n\n___________________________________ Breadth First ________________________________________");
+        System.out.println(binarySearchTree.BreadthFirst(binarySearchTree.root));
+
+
     }
 }

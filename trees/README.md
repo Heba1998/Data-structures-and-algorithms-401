@@ -81,3 +81,47 @@ public int MaxValue(Node current){
 * Output:
 
 ![Output](./Max.png)
+
+
+
+# Breadth-first Traversal.
+
+## Challenge Summary
+Write a function called breadth first Return: list of all values in the tree, in the order they were encountered Traverse the input tree using a Breadth-first approach.
+
+## Whiteboard Process
+
+![maximum value](./breadthFirstW.png)
+
+## Approach & Efficiency
+
+* Time Complexity: O(N^2)
+* Space Complexity: O(N).
+
+## Solution
+
+* Code:
+
+```java
+    ArrayList <Object> BreadthFirstL=new ArrayList<>();
+    public ArrayList BreadthFirst(Node root){
+        if (root!=null){
+            Queue<Node> breath=new Queue();
+            breath.enqueue(root);
+            while (!breath.isEmpty()){
+                Node front=  breath.dequeue();
+                BreadthFirstL.add(front.getData());
+                if (front.getLeftNode() !=null)
+                    breath.enqueue(front.getLeftNode());
+                if (front.getRightNode() !=null)
+                    breath.enqueue(front.getRightNode());
+            }
+            return BreadthFirstL;
+        }
+        else return null;
+    }
+```
+
+* Output:
+
+![Output](./breadthFirstout.png)

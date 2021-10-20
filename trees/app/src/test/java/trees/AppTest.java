@@ -114,4 +114,18 @@ class AppTest {
         assertEquals(90, binarySearchTree.MaxValue(binarySearchTree.root));
     }
 
+
+    // Breadth FirstL
+    @Test
+    void BreadthFirstL(){
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        assertEquals(null , binarySearchTree.BreadthFirst(binarySearchTree.root));
+        binarySearchTree.Add(50);
+        binarySearchTree.Add(10);
+        binarySearchTree.Add(60);
+        binarySearchTree.Add(30);
+        binarySearchTree.Add(90);
+        binarySearchTree.Add(80);
+        assertEquals("[50, 10, 60, 30, 90, 80]" , binarySearchTree.BreadthFirst(binarySearchTree.root).toString());
+    }
 }

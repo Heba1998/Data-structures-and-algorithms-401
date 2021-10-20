@@ -25,3 +25,5 @@
 
 * [maximum value in the tree](trees/MaximumValue.png)
 
+
+* [Breadth-first Traversal](trees/breadthFirstW.png)

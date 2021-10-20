@@ -3,7 +3,7 @@ package trees;
 
 public class Node<T> {
     public T data;
-
+    public Node nextdata;
     public Node<T> leftNode;
     public Node<T> rightNode;
 
