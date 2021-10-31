@@ -1,4 +1,4 @@
-# Selection Sort
+# Insertion Sort
 Selection Sort is a sorting algorithm that traverses the array multiple times as it slowly builds out the sorting sequence. 
 The traversal keeps track of the minimum value and places it in the front of the array which should be incrementally sorted.
 
@@ -25,24 +25,33 @@ Sample Array: [8,4,23,42,16,15]
 
 *In the first pass through of the selection sort, we evaluate if there is a smaller number in the array than what is currently present in index 0. We find this smaller number right away in index 1. The minimum value gets updated to remember this index. At the end of the evaluation, the smaller number will be swapped with the current value in index i. This results in our smallest number of our array being placed first.*
 
+
 ![pass1](pass1.png)
+
 
 
 * Pass 2:
 
 *The second pass through the array evaluates the remaining values in the array to see if there is a smaller value other than the current position of i. 8 is the 2nd smallest number in the array, so it “swaps” with itself. The minimum value does not change at all during the iteration of this pass.*
+
+
 ![pass2](pass2.png)
+
 
 
 * Pass 3:
 
 *The third pass through evaluates the remaining indexes in the array, starting at position 2. Both position 4 and 5 are smaller than the value in position 2. Each time a smaller number than the current minimum is found, the variable will update to the new smallest number. In this case, 15 is the next smallest number. As a result, it will swap with position 2.*
+
+
 ![pass3](pass3.png)
 
 
 * Pass 4:
 
 *The 4th pass through on the array proves that 16 is the next smallest number in the array, and as a result, switches places with the 42.*
+
+
 ![pass4](pass4.png)
 
 
