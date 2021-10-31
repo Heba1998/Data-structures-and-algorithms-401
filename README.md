@@ -30,3 +30,6 @@
 
 
 * [FizzBuzz Tree](trees/FizzBuzzW.png)
+
+
+* [Insertion Sort](Insertion-Sort/README.md)
