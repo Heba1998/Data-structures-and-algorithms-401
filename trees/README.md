@@ -125,3 +125,47 @@ Write a function called breadth first Return: list of all values in the tree, in
 * Output:
 
 ![Output](./breadthFirstout.png)
+
+
+
+# FizzBuzz Tree
+
+## Challenge Summary
+*create a function that accept K-ary tree as parameter and return a k-ary tree with values of fizz if the tree node devisible by 3 and buzz if the tree node devisible by 5 and fizzbuzz if divisble by 3 and 5*
+
+## Whiteboard Process
+![](./FizzBuzzW.png)
+
+## Approach & Efficiency
+
+* Time Complexity: O(N)
+* Space Complexity: O(N).
+
+## Solution
+
+```java
+public class FizzBuzzTree {
+    KNode root = null;
+
+    public void preorder(KNode node) {
+        if (node == null) return;
+        else {
+            if ((node.data % 15) == 0) {
+                System.out.print("FizzBuzz" + " ");
+            } else if ((node.data % 5) == 0) {
+                System.out.print("Buzz" + " ");
+            } else if ((node.data % 3) == 0) {
+                System.out.print("Fizz" + " ");
+            } else {
+                System.out.print(node.data + " ");
+            }
+            preorder(node.left);
+            preorder(node.right);
+        }
+
+    }
+```
+
+* Output:
+
+![](./FizzBuzzOutput.png)

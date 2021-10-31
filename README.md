@@ -27,3 +27,6 @@
 
 
 * [Breadth-first Traversal](trees/breadthFirstW.png)
+
+
+* [FizzBuzz Tree](trees/FizzBuzzW.png)
