@@ -27,6 +27,38 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Merge/lib" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1-all/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Merge/lib" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sort" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1-all/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sort" />
+            <option value="$PROJECT_DIR$/Sort/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sort1" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1-all/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sort1" />
+            <option value="$PROJECT_DIR$/Sort1/lib" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/stack-and-queue" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1-all/gradle-7.1.1" />
         <option name="modules">
