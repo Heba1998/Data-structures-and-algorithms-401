@@ -29,6 +29,6 @@ public class App {
         System.out.println(new App().getGreeting());
 
         int[] arr = {8, 4, 23, 42, 16, 15};
-        System.out.println(Arrays.toString(InsertionSort(arr)));
+        System.out.println("Insertion Sort : " +Arrays.toString(InsertionSort(arr)));
     }
 }

@@ -33,3 +33,6 @@
 
 
 * [Insertion Sort](Insertion-Sort/README.md)
+
+
+* [Merge Sort](Sort/README.md)
