@@ -14,10 +14,19 @@ class AppTest {
         int[]  emptyArr = {};
         assertEquals(emptyArr, App.mergeSort(emptyArr));
 
-        // regular array
         int[]  regularArr = {8,4,23,42,16,15};
         assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(App.mergeSort(regularArr)));
 
+    }
+
+
+    @Test void quickSortFunction() {
+
+        int[]  emptyArr = {};
+        assertEquals(emptyArr, App.quickSortFunction(emptyArr,0,emptyArr.length-1));
+
+        int[]  regularArr = {8,4,23,42,16,15};
+        assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(App.quickSortFunction(regularArr,0,regularArr.length-1)));
     }
 
 }
