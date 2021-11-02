@@ -36,3 +36,6 @@
 
 
 * [Merge Sort](Sort/README.md)
+
+
+* [Quick Sort](Sort/README.md)
