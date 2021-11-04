@@ -39,3 +39,6 @@
 
 
 * [Quick Sort](Sort/README.md)
+
+
+* [Hash Table](hash/README.md)
