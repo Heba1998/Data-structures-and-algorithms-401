@@ -9,7 +9,8 @@ public class App {
 //        queue();
 //        Pqueue();
 //        AnimalShelter();
-        bracket();
+//        bracket();
+        min();
     }
     private static void stack() {
         Stack<String> Strstack = new Stack<>();
@@ -90,5 +91,43 @@ public class App {
         System.out.println("\n_________________Multi-bracket Validation______________");
         System.out.println("The result for {([])} is :  "+exp.bracket(expValue));
         System.out.println("________________________________________________________");
+    }
+
+
+    private static void min(){
+        Min s = new Min();
+
+        s.push(6);
+        System.out.println(s.min());    // prints 6
+
+        s.push(7);
+        System.out.println(s.min());    // prints 6
+
+        s.push(8);
+        System.out.println(s.min());    // prints 6
+
+        s.push(5);
+        System.out.println(s.min());    // prints 5
+
+        s.push(3);
+        System.out.println(s.min());    // prints 3
+
+        s.pop();
+        System.out.println(s.min());    // prints 5
+
+        s.push(10);
+        System.out.println(s.min());    // prints 5
+
+        s.pop();
+        System.out.println(s.min());    // prints 5
+
+        s.pop();
+        System.out.println(s.min());    // prints 6
+        s.pop();
+        System.out.println(s.min());    // prints 6
+        s.pop();
+        System.out.println(s.min());    // prints 6
+        s.pop();
+        System.out.println(s.min());    // prints 6
     }
 }

@@ -1,41 +1,39 @@
 package stack.and.queue;
 
 public class bracket {
-    static boolean bracket(String expr)
+    static boolean bracket(String data)
     {
+        Stack<Character> bracket = new Stack<>();
 
-        Stack<Character> stack
-                = new Stack<>();
-
-        for (int i = 0; i < expr.length(); i++)
+        for (int i = 0; i < data.length(); i++)
         {
-            char x = expr.charAt(i);
+            char x = data.charAt(i);
 
             if (x == '(' || x == '[' || x == '{')
             {
-                stack.push(x);
+                bracket.push(x);
                 continue;
             }
 
-            if (stack.isEmpty())
+            if (bracket.isEmpty())
                 return false;
             char check;
 
             if (x==')'){
-                check = stack.pop();
+                check = bracket.pop();
                 if (check == '{' || check == '[')
                     return false;
             }else if(x=='}'){
-                check = stack.pop();
+                check = bracket.pop();
                 if (check == '(' || check == '[')
                     return false;
             }else if(x==']'){
-                check = stack.pop();
+                check = bracket.pop();
                 if (check == '(' || check == '{')
                     return false;
             }
         }
-        return (stack.isEmpty());
+        return (bracket.isEmpty());
     }
 
 }
