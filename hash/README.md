@@ -26,3 +26,39 @@
 
 * **hash()**
     * Takes a key and convert it to an integer index.
+
+
+# **First repeated word**
+# Challenge Summary
+*Write a function called repeated word that finds the first word to occur more than once in a string*
+
+## Whiteboard Process
+![](image/RepeatedWhiteboard.png)
+
+## Approach & Efficiency
+   * Time :O(n).
+   * Space: complexity of O(n).
+
+## Solution
+
+* **Code:**
+
+```java
+    public static String RepeatedWord(String string) {
+        HashTable<String, String> Words = new HashTable<>();
+        String[] Arr = string.split(" ");
+        for (String word : Arr) {
+            word =word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+            if (Words.containsHash(word)) {
+                return word;
+            } else {
+                Words.add(word,word);
+            }
+        }
+        return "Ooops 🤯 There's no repeated 🎉";
+    }
+```
+
+* **Output:**
+
+![](image/outputRepeated.png)

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class HashTable <K, V>{
@@ -92,6 +94,21 @@ public class HashTable <K, V>{
         }else {
             return get(key)!=null;
         }
+    }
+
+
+    public static String RepeatedWord(String string) {
+        HashTable<String, String> Words = new HashTable<>();
+        String[] Arr = string.split(" ");
+        for (String word : Arr) {
+            word =word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+            if (Words.containsHash(word)) {
+                return word;
+            } else {
+                Words.add(word,word);
+            }
+        }
+        return "Ooops 🤯 There's no repeated 🎉";
     }
 
     @Override
