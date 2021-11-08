@@ -26,3 +26,101 @@
 
 * **hash()**
     * Takes a key and convert it to an integer index.
+
+
+# **First repeated word**
+# Challenge Summary
+*Write a function called repeated word that finds the first word to occur more than once in a string*
+
+## Whiteboard Process
+![](image/RepeatedWhiteboard.png)
+
+## Approach & Efficiency
+   * Time :O(n).
+   * Space: complexity of O(n).
+
+## Solution
+
+* **Code:**
+
+```java
+    public static String RepeatedWord(String string) {
+        HashTable<String, String> Words = new HashTable<>();
+        String[] Arr = string.split(" ");
+        for (String word : Arr) {
+            word =word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+            if (Words.containsHash(word)) {
+                return word;
+            } else {
+                Words.add(word,word);
+            }
+        }
+        return "Ooops 🤯 There's no repeated 🎉";
+    }
+```
+
+* **Output:**
+
+![](image/outputRepeated.png)
+
+
+
+# **Common values in 2 binary trees**
+# Challenge Summary
+* *Write a function called tree_intersection that takes two binary trees as parameters.*
+* *Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.*
+
+## Whiteboard Process
+![](image/tree-intersectionW.png)
+
+## Approach & Efficiency
+* Time :O(n).
+* Space: complexity of O(n).
+
+## Solution
+
+* **Code:**
+
+```java
+   public class TreeInsertion<K, T> {
+  HashTable<K, T> hashTable = new HashTable<>();
+  public void preOrder(Node root) {
+    if (root != null) {
+      hashTable.add((K) root.value, (T) root.value);
+    }
+    if (root.left != null) {
+      preOrder(root.left);
+    }
+    if (root.right != null) {
+      preOrder(root.right);
+    }
+  }
+  public List treeInsertion(Node Tree1, Node Tree2) {
+    if (Tree1.root == null || Tree2.root == null) {
+      return null;
+    }else{
+      List Temp = new ArrayList();
+      preOrder(Tree1.root);
+      traverse(Tree2.root, Temp);
+      return Temp;
+    }
+  }
+  public void traverse(Node root, List Temp) {
+    if (root != null) {
+      if (hashTable.containsHash((K) root.value)) {
+        Temp.add(root.value);
+      }
+      if (root.left != null) {
+        traverse(root.left, Temp);
+      }
+      if (root.right != null) {
+        traverse(root.right, Temp);
+      }
+    }
+  }
+}
+```
+
+* **Output:**
+
+![](image/v1.png)
