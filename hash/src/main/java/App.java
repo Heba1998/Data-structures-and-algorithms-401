@@ -51,6 +51,30 @@ public class App {
 
 
         TreeInsertion Challenge32 = new TreeInsertion();
-        System.out.println("common values in 2 binary trees are : "+Challenge32.treeInsertion(Tree1, Tree2));
+//        System.out.println("common values in 2 binary trees are : "+Challenge32.treeInsertion(Tree1, Tree2));
+
+
+
+        // --------------------------------- code challenge 33-------------------------------------------
+
+        HashMap hashMap1 = new HashMap();
+        hashMap1.put("fond", "enamored");
+        hashMap1.put("wrath", "anger");
+        hashMap1.put("diligent", "employed");
+        hashMap1.put("outfit", "garb");
+        hashMap1.put("guide", "usher");
+
+        HashMap hashMap2 = new HashMap();
+
+        hashMap2.put("fond", "averse");
+        hashMap2.put("wrath", "delight");
+        hashMap2.put("diligent", "idle");
+        hashMap2.put("guide", "follow");
+        hashMap2.put("flow", "jam");
+
+        LeftJoin Challenge33 = new LeftJoin();
+        System.out.println(Challenge33.leftJoin(hashMap1 , hashMap2));
+       // ----------------------------------------------------------------------------
+
     }
 }

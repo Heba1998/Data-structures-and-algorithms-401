@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -134,6 +137,28 @@ public class AppTest {
         Tree2.root.right.right.right = new Node(500);
 
         assertEquals("[]",intersectionTree.treeInsertion(Tree1, Tree2).toString());
+    }
+
+
+    @Test
+    public void LeftJoinTest() {
+        HashMap hashMap1 = new HashMap();
+        hashMap1.put("fond", "enamored");
+        hashMap1.put("wrath", "anger");
+        hashMap1.put("diligent", "employed");
+        hashMap1.put("outfit", "garb");
+        hashMap1.put("guide", "usher");
+
+        HashMap hashMap2 = new HashMap();
+
+        hashMap2.put("fond", "averse");
+        hashMap2.put("wrath", "delight");
+        hashMap2.put("diligent", "idle");
+        hashMap2.put("guide", "follow");
+        hashMap2.put("flow", "jam");
+
+        LeftJoin Challenge33 = new LeftJoin();
+        assertEquals("[{diligent: employed, idle}, {outfit: garb, null}, {wrath: anger, delight}, {guide: usher, follow}, {fond: enamored, averse}]" , Challenge33.leftJoin(hashMap1 , hashMap2).toString());
     }
 
 
