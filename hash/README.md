@@ -124,3 +124,46 @@
 * **Output:**
 
 ![](image/v1.png)
+
+
+# **Implement a simplified LEFT JOIN for 2 Hashmaps**
+# Challenge Summary
+* function called left join
+* Arguments: two hash maps
+  * The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+  * The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+* Return: The returned data structure
+
+## Whiteboard Process
+![](image/hashmap-left-joinWhite.png)
+
+## Approach & Efficiency
+* Time :O(n).
+* Space: complexity of O(n).
+
+## Solution
+
+* **Code:**
+
+```java
+ public class LeftJoin {
+
+  public static List<String> leftJoin(HashMap hashMap1, HashMap hashMap2){
+    List<String> Keylist = new ArrayList<>();
+    for(Object i : hashMap1.keySet()){
+      if(hashMap1.containsKey(i)){
+        Keylist.add("{"+i +  ": " + hashMap1.get(i)+ ", " + hashMap2.get(i)+"}");
+      } else{
+        Keylist.add(i + ": " + hashMap1.get(i) + ", " + null);
+      }
+    }
+    return Keylist;
+  }
+}
+```
+
+* **Output:**
+
+![](image/hashmap-left-joinOut.png)
+
+
