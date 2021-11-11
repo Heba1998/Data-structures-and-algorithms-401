@@ -10,7 +10,7 @@ public class App {
 //        Pqueue();
 //        AnimalShelter();
 //        bracket();
-        min();
+//        min();
     }
     private static void stack() {
         Stack<String> Strstack = new Stack<>();

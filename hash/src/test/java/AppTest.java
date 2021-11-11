@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -64,5 +67,99 @@ public class AppTest {
         int value = StudentsGrade.get("Jason");
         assertEquals(value,StudentsGrade.get("Jason"));
     }
+
+
+    @Test void RepeatedWordTest() {
+        HashTable repeatedWordTest = new HashTable();
+        String test1="Once upon a time, there was a brave princess who...";
+        String test4="Once upon a time, there was A brave princess who...";
+        String test2 = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+        String test3 = "";
+        assertEquals("a",repeatedWordTest.RepeatedWord(test1));
+        assertEquals("a",repeatedWordTest.RepeatedWord(test4));
+        assertEquals("it",repeatedWordTest.RepeatedWord(test2));
+        assertEquals("Ooops 🤯 There's no repeated 🎉",repeatedWordTest.RepeatedWord(test3));
+
+    }
+
+
+    @Test void intersectionTreeTest1() {
+        TreeInsertion intersectionTree = new TreeInsertion();
+        Node Tree1 = new Node();
+        Tree1.root = new Node(150);
+        Tree1.root.left = new Node(100);
+        Tree1.root.left.left = new Node(75);
+        Tree1.root.left.right = new Node(160);
+        Tree1.root.left.right.left = new Node(125);
+        Tree1.root.left.right.right = new Node(175);
+        Tree1.root.right = new Node(250);
+        Tree1.root.right.left = new Node(200);
+        Tree1.root.right.right = new Node(350);
+        Tree1.root.right.right.left = new Node(300);
+        Tree1.root.right.right.right = new Node(500);
+
+        Node Tree2 = new Node();
+        Tree2.root = new Node(42);
+        Tree2.root.left = new Node(100);
+        Tree2.root.left.left = new Node(15);
+        Tree2.root.left.right = new Node(160);
+        Tree2.root.left.right.left = new Node(125);
+        Tree2.root.left.right.right = new Node(175);
+        Tree2.root.right = new Node(600);
+        Tree2.root.right.left = new Node(200);
+        Tree2.root.right.right = new Node(350);
+        Tree2.root.right.right.left = new Node(4);
+        Tree2.root.right.right.right = new Node(500);
+
+        assertEquals("[100, 160, 125, 175, 200, 350, 500]",intersectionTree.treeInsertion(Tree1, Tree2).toString());
+
+
+    }
+
+
+    @Test void intersectionTreeTest2() {
+        TreeInsertion intersectionTree = new TreeInsertion();
+        Node Tree1 = new Node();
+        Tree1.root = new Node(150);
+
+
+        Node Tree2 = new Node();
+        Tree2.root = new Node(42);
+        Tree2.root.left = new Node(100);
+        Tree2.root.left.left = new Node(15);
+        Tree2.root.left.right = new Node(160);
+        Tree2.root.left.right.left = new Node(125);
+        Tree2.root.left.right.right = new Node(175);
+        Tree2.root.right = new Node(600);
+        Tree2.root.right.left = new Node(200);
+        Tree2.root.right.right = new Node(350);
+        Tree2.root.right.right.left = new Node(4);
+        Tree2.root.right.right.right = new Node(500);
+
+        assertEquals("[]",intersectionTree.treeInsertion(Tree1, Tree2).toString());
+    }
+
+
+    @Test
+    public void LeftJoinTest() {
+        HashMap hashMap1 = new HashMap();
+        hashMap1.put("fond", "enamored");
+        hashMap1.put("wrath", "anger");
+        hashMap1.put("diligent", "employed");
+        hashMap1.put("outfit", "garb");
+        hashMap1.put("guide", "usher");
+
+        HashMap hashMap2 = new HashMap();
+
+        hashMap2.put("fond", "averse");
+        hashMap2.put("wrath", "delight");
+        hashMap2.put("diligent", "idle");
+        hashMap2.put("guide", "follow");
+        hashMap2.put("flow", "jam");
+
+        LeftJoin Challenge33 = new LeftJoin();
+        assertEquals("[{diligent: employed, idle}, {outfit: garb, null}, {wrath: anger, delight}, {guide: usher, follow}, {fond: enamored, averse}]" , Challenge33.leftJoin(hashMap1 , hashMap2).toString());
+    }
+
 
 }
