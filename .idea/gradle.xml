@@ -59,11 +59,14 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/hash" />
+
+        <option name="externalProjectPath" value="$PROJECT_DIR$/graph" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1-all/gradle-7.1.1" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/hash" />
+            <option value="$PROJECT_DIR$/graph" />
+            <option value="$PROJECT_DIR$/graph/app" />
+
           </set>
         </option>
       </GradleProjectSettings>
