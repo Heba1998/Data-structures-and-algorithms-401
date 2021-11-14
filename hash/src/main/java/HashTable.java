@@ -94,6 +94,21 @@ public class HashTable <K, V>{
         }
     }
 
+
+    public static String RepeatedWord(String string) {
+        HashTable<String, String> Words = new HashTable<>();
+        String[] Arr = string.split(" ");
+        for (String word : Arr) {
+            word =word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+            if (Words.containsHash(word)) {
+                return word;
+            } else {
+                Words.add(word,word);
+            }
+        }
+        return "Ooops 🤯 There's no repeated 🎉";
+    }
+
     @Override
     public String toString() {
         return "HashTable{" +

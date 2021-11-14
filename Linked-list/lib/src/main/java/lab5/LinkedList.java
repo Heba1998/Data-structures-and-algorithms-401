@@ -2,8 +2,9 @@ package lab5;
 
 
 public class LinkedList {
-
-    Node head;
+    private static Node head;
+    public int length;
+//    Node head;
     private boolean value;
     private LinkedList next;
 
@@ -54,14 +55,14 @@ public class LinkedList {
         }
     }
 
-    // Insert Before
+// Insert Before
     public void insertBefore(int value, int newValue) {
         Node insertNodeBefore = new Node(newValue);
         if (head == null) {
             head = insertNodeBefore;
         } else if (head.value == value) {
             insert(newValue);
-        } else {
+        }else {
             Node current = head;
             while (current.next != null) {
                 if (current.next.value == value) {
@@ -120,31 +121,163 @@ public class LinkedList {
 
     //  challenge 8
 
-    public Node zipLists(LinkedList list1, LinkedList list2) {
+//    public Node zipLists(LinkedList list1, LinkedList list2) {
+//
+//        if (list1.head == null && list2.head == null) return null;
+//        if (list1.head == null) return list2.head;
+//        if (list2.head == null) return list1.head;
+//        LinkedList newZippedList = new LinkedList();
+//        newZippedList.head = list1.head;
+//
+//        Node current = list1.head;
+//        list1.head = list1.head.next;
+//
+//        while (current != null && (list2.head != null || list1.head != null)) {
+//            if (list2.head != null) {
+//                current.next = list2.head;
+//                list2.head = list2.head.next;
+//                current = current.next;
+//            }
+//            if (list1.head != null) {
+//                current.next = list1.head;
+//                list1.head = list1.head.next;
+//                current = current.next;
+//            }
+//        }
+//        return newZippedList.head;
+//    }
 
-        if (list1.head == null && list2.head == null) return null;
-        if (list1.head == null) return list2.head;
-        if (list2.head == null) return list1.head;
 
-        LinkedList newZippedList = new LinkedList();
-        newZippedList.head = list1.head;
+    public  String zipLists(LinkedList linkedList , LinkedList linkedList1){
 
-        Node current = list1.head;
-        list1.head = list1.head.next;
+        Node list1Node = linkedList.head;
+        Node list2Node = linkedList1.head;
+//        System.out.println(list2Node);
+        LinkedList mergedList = new LinkedList();
+        int lenthSizeBig = linkedList.length + linkedList1.length;
 
-        while (current != null && (list2.head != null || list1.head != null)) {
-            if (list2.head != null) {
-                current.next = list2.head;
-                list2.head = list2.head.next;
-                current = current.next;
+        while (lenthSizeBig > 0) {
+            if (list1Node != null){
+                mergedList.insert(list1Node.value);
+                list1Node = list1Node.next;
             }
-            if (list1.head != null) {
-                current.next = list1.head;
-                list1.head = list1.head.next;
-                current = current.next;
+            if (list2Node != null){
+                mergedList.insert(list2Node.value);
+                list2Node = list2Node.next;
             }
+            lenthSizeBig--;
         }
-        return newZippedList.head;
+        return mergedList.toString();
+    }
+
+
+    public boolean isPalindrome() {
+        if (head == null){
+            return true;
+        }
+        Node current = head;
+        Node prev = head;
+
+        while (current.next != null) {
+            Node temp = new Node(current.next.value);
+            temp.next = prev;
+            prev = temp;
+            current = current.next;
+        }
+        Node p1 = head;
+        Node p2 = prev;
+
+        while (p1 != null) {
+            if (p1.value != p2.value){
+                return false;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return true;
+    }
+
+    public static int middle(LinkedList ll){
+        int mid = (ll.length/2);
+        int counter =0;
+        Node current = head;
+        while (counter != mid){
+            current = current.next;
+            counter++;
+        }
+        return Integer.parseInt(String.valueOf(current.value));
+    }
+//    public java.util.LinkedList reverse(java.util.LinkedList linkedList2) {
+//        LinkedList prev = null;
+//        Node current = head;
+//
+//        LinkedList next = null;
+//        while (current != null) {
+//
+//            next = current.next;
+//            current.next=prev;
+//            prev = current;
+//            current = next;
+//
+//        }
+//        head = prev;
+//        return linkedList2;
+//    }
+
+
+    void deleteNode(int key) {
+        Node temp = head, prev = null;
+        if (temp != null && temp.value == key) {
+            head = temp.next;
+            return;}
+        while (temp != null && temp.value != key) {
+            prev = temp;
+            temp = temp.next;}
+        prev.next = temp.next;
+    }
+
+
+
+
+
+    public LinkedList sortList(LinkedList a)
+    {
+        Node current = head, index = null;
+        int temp;
+        if (head == null) {
+            return null;
+        }
+        else {
+            while (current != null) {
+                index = current.next;
+                while (index != null){
+                    if (current.value < index.value) {
+                        temp = current.value;
+                        current.value = index.value;
+                        index.value = temp;
+                    }
+
+                index = index.next;
+            }
+            current = current.next;
+        }
+        return a;
+    }}
+
+
+
+    public LinkedList reverse(LinkedList linkedList)
+    {Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return linkedList;
     }
 
 // test for exam
@@ -176,3 +309,4 @@ temp.next=prev;
     }
 
 }
+
