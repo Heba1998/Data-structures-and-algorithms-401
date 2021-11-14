@@ -280,8 +280,33 @@ public class LinkedList {
         return linkedList;
     }
 
+// test for exam
+    public boolean isPalindrome() {
+        if (head == null)
+            return true;
+        Node current = head;
+        Node prev = head;
+        Node temp ;
 
+        while (current.next != null) {
+            temp = new Node(current.next.value);
+            System.out.println(temp);
+temp.next=prev;
+            prev = temp;
+            current = current.next;
+        }
 
+        Node p1 = head;
+        Node p2 = prev;
+
+        while (p1 != null) {
+            if (p1.value != p2.value)
+                return false;
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return true;
+    }
 
 }
 

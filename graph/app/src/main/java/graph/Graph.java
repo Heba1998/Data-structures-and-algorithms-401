@@ -8,9 +8,10 @@ public class Graph {
     public Graph() {
         this.AdjacentNode =  new HashMap<>();;
     }
-    public void addNode(String data) {
+    public Node addNode(String data) {
         Node NewNode = new Node(data);
         AdjacentNode.put(NewNode, new ArrayList<>());
+        return NewNode;
     }
     public void addEdge(String Value1, String value2) {
         Node NewNode1 = new Node(Value1);
@@ -32,6 +33,37 @@ public class Graph {
     public int size() {
         return AdjacentNode.size();
     }
+
+
+    public List<Node> breadthFirst(Node root){
+        List<Node> list = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
+        List<Node> newList = new ArrayList<>();
+
+        newList.add(root);
+        visited.add(root);
+
+        while(!newList.isEmpty()){
+            Node front = newList.get(0);
+            newList.remove(0);
+            list.add(front);
+
+            for (int i = 0; i < AdjacentNode.get(front).size(); i++) {
+                if (! visited.contains(AdjacentNode.get(front).get(i))){
+                    visited.add(AdjacentNode.get(front).get(i));
+                    newList.add(AdjacentNode.get(front).get(i));
+                }
+            }
+
+        }
+        int i;
+        for (i = 0; i < list.size()-1; i++) {
+            System.out.print(list.get(i).data+", ");
+        }
+        System.out.print(list.get(i).data);
+        return list;
+    }
+    
 
 
     @Override
