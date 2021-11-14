@@ -4,6 +4,10 @@
 package graph;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -38,6 +42,28 @@ class AppTest {
         assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]",graph.getNodes().toString());
         assertEquals(3, graph.size());
 
+
+    }
+
+
+    @Test void BreadthFirstTest(){
+        Graph BreadthFirst = new Graph();
+        Node a = BreadthFirst.addNode("Pandora");
+        Node b =  BreadthFirst.addNode("Arendelle");
+        Node c = BreadthFirst.addNode("Metroville");
+        Node d = BreadthFirst.addNode("Monstropolis");
+        Node e = BreadthFirst.addNode("Narnia");
+        Node f = BreadthFirst.addNode("Naboo");
+
+        BreadthFirst.addEdge("Pandora","Arendelle");
+        BreadthFirst.addEdge("Arendelle","Metroville");
+        BreadthFirst.addEdge("Arendelle","Monstropolis");
+        BreadthFirst.addEdge("Metroville","Narnia");
+        BreadthFirst.addEdge("Metroville","Naboo");
+        BreadthFirst.addEdge("Monstropolis","Naboo");
+        BreadthFirst.addEdge("Narnia","Naboo");
+        
+        assertEquals("[Graph{label='Pandora', weight=0}, Graph{label='Arendelle', weight=0}, Graph{label='Metroville', weight=0}, Graph{label='Monstropolis', weight=0}, Graph{label='Narnia', weight=0}, Graph{label='Naboo', weight=0}]",BreadthFirst.breadthFirst(a).toString());
 
     }
 

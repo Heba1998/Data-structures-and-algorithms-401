@@ -11,28 +11,57 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        Graph graph = new Graph();
+//        Graph graph = new Graph();
+//
+//        // Add node in graph
+//        graph.addNode("1");
+//        graph.addNode("2");
+//        graph.addNode("3");
+//        graph.addNode("4");
+//        graph.addNode("8");
+//        graph.addNode("9");
+//
+//        // Add Adge to the node
+//        graph.addEdge("1" , "2");
+//        graph.addEdge("2" , "9");
+//        graph.addEdge("4" , "3");
+//        graph.addEdge("8" , "1");
+//
+//
+//        System.out.println("Graph: "+graph);
+//        System.out.println("Nodes in graph: "+graph.getNodes());
+//        System.out.println("Neighbors of node 9 : "+graph.getNeighbors("9"));
+//        System.out.println("Neighbors of node 4 : "+graph.getNeighbors("4"));
+//        System.out.println("Neighbors of node 1 : "+graph.getNeighbors("1"));
+//        System.out.println("Graph size: "+graph.size());
+//
 
-        // Add node in graph
-        graph.addNode("1");
-        graph.addNode("2");
-        graph.addNode("3");
-        graph.addNode("4");
-        graph.addNode("8");
-        graph.addNode("9");
 
-        // Add Adge to the node
-        graph.addEdge("1" , "2");
-        graph.addEdge("2" , "9");
-        graph.addEdge("4" , "3");
-        graph.addEdge("8" , "1");
+        Graph BreadthFirst = new Graph();
+        Node a = BreadthFirst.addNode("Pandora");
+        Node b =  BreadthFirst.addNode("Arendelle");
+        Node c = BreadthFirst.addNode("Metroville");
+        Node d = BreadthFirst.addNode("Monstropolis");
+        Node e = BreadthFirst.addNode("Narnia");
+        Node f = BreadthFirst.addNode("Naboo");
+
+        BreadthFirst.addEdge("Pandora","Arendelle");
+        BreadthFirst.addEdge("Arendelle","Metroville");
+        BreadthFirst.addEdge("Arendelle","Monstropolis");
+        BreadthFirst.addEdge("Metroville","Narnia");
+        BreadthFirst.addEdge("Metroville","Naboo");
+        BreadthFirst.addEdge("Monstropolis","Naboo");
+        BreadthFirst.addEdge("Narnia","Naboo");
 
 
-        System.out.println("Graph: "+graph);
-        System.out.println("Nodes in graph: "+graph.getNodes());
-        System.out.println("Neighbors of node 9 : "+graph.getNeighbors("9"));
-        System.out.println("Neighbors of node 4 : "+graph.getNeighbors("4"));
-        System.out.println("Neighbors of node 1 : "+graph.getNeighbors("1"));
-        System.out.println("Graph size: "+graph.size());
+        System.out.println("Neighbors of node A : "+BreadthFirst.getNeighbors("Pandora"));
+        System.out.println("Neighbors of node b : "+BreadthFirst.getNeighbors("Arendelle"));
+        System.out.println("Neighbors of node c : "+BreadthFirst.getNeighbors("Metroville"));
+        System.out.println("Neighbors of node d : "+BreadthFirst.getNeighbors("Monstropolis"));
+        System.out.println("Neighbors of node e : "+BreadthFirst.getNeighbors("Narnia"));
+        System.out.println("Neighbors of node f : "+BreadthFirst.getNeighbors("Naboo"));
+        System.out.println("\nBreadth First Start with node" + " 'Pandora'" + ":");
+        BreadthFirst.breadthFirst(a);
+        System.out.println("\n\n");
     }
 }
