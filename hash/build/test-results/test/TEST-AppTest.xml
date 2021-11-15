@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-11-04T21:23:38" hostname="LTUCSTUDENT-L09" time="0.047">
+<testsuite name="AppTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-11-09T14:27:03" hostname="LTUCSTUDENT-L09" time="0.076">
   <properties/>
-  <testcase name="getFromCollision()" classname="AppTest" time="0.031"/>
-  <testcase name="Tast1()" classname="AppTest" time="0.002"/>
+  <testcase name="getFromCollision()" classname="AppTest" time="0.029"/>
+  <testcase name="intersectionTreeTest1()" classname="AppTest" time="0.003"/>
+  <testcase name="intersectionTreeTest2()" classname="AppTest" time="0.002"/>
+  <testcase name="Tast1()" classname="AppTest" time="0.001"/>
   <testcase name="Test2()" classname="AppTest" time="0.001"/>
   <testcase name="Test3()" classname="AppTest" time="0.001"/>
-  <testcase name="Test4()" classname="AppTest" time="0.002"/>
+  <testcase name="Test4()" classname="AppTest" time="0.001"/>
   <testcase name="Test5()" classname="AppTest" time="0.002"/>
   <testcase name="Test6()" classname="AppTest" time="0.001"/>
+  <testcase name="LeftJoinTest()" classname="AppTest" time="0.022"/>
+  <testcase name="RepeatedWordTest()" classname="AppTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
