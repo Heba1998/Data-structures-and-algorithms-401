@@ -35,33 +35,63 @@ public class App {
 //        System.out.println("Neighbors of node 1 : "+graph.getNeighbors("1"));
 //        System.out.println("Graph size: "+graph.size());
 //
+//
+//
+//        Graph BreadthFirst = new Graph();
+//        Node a = BreadthFirst.addNode("Pandora");
+//        Node b =  BreadthFirst.addNode("Arendelle");
+//        Node c = BreadthFirst.addNode("Metroville");
+//        Node d = BreadthFirst.addNode("Monstropolis");
+//        Node e = BreadthFirst.addNode("Narnia");
+//        Node f = BreadthFirst.addNode("Naboo");
+//
+//        BreadthFirst.addEdge("Pandora","Arendelle");
+//        BreadthFirst.addEdge("Arendelle","Metroville");
+//        BreadthFirst.addEdge("Arendelle","Monstropolis");
+//        BreadthFirst.addEdge("Metroville","Narnia");
+//        BreadthFirst.addEdge("Metroville","Naboo");
+//        BreadthFirst.addEdge("Monstropolis","Naboo");
+//        BreadthFirst.addEdge("Narnia","Naboo");
+//
+//
+//        System.out.println("Neighbors of node A : "+BreadthFirst.getNeighbors("Pandora"));
+//        System.out.println("Neighbors of node b : "+BreadthFirst.getNeighbors("Arendelle"));
+//        System.out.println("Neighbors of node c : "+BreadthFirst.getNeighbors("Metroville"));
+//        System.out.println("Neighbors of node d : "+BreadthFirst.getNeighbors("Monstropolis"));
+//        System.out.println("Neighbors of node e : "+BreadthFirst.getNeighbors("Narnia"));
+//        System.out.println("Neighbors of node f : "+BreadthFirst.getNeighbors("Naboo"));
+//        System.out.println("\nBreadth First Start with node" + " 'Pandora'" + ":");
+//        BreadthFirst.breadthFirst(a);
+//        System.out.println("\n\n");
 
 
-        Graph BreadthFirst = new Graph();
-        Node a = BreadthFirst.addNode("Pandora");
-        Node b =  BreadthFirst.addNode("Arendelle");
-        Node c = BreadthFirst.addNode("Metroville");
-        Node d = BreadthFirst.addNode("Monstropolis");
-        Node e = BreadthFirst.addNode("Narnia");
-        Node f = BreadthFirst.addNode("Naboo");
+        Graph businessTrip = new Graph();
+        Node a = businessTrip.addNode("Pandora");
+        Node b =  businessTrip.addNode("Arendelle");
+        Node c = businessTrip.addNode("Metroville");
+        Node d = businessTrip.addNode("Monstropolis");
+        Node e = businessTrip.addNode("Narnia");
+        Node f = businessTrip.addNode("Naboo");
 
-        BreadthFirst.addEdge("Pandora","Arendelle");
-        BreadthFirst.addEdge("Arendelle","Metroville");
-        BreadthFirst.addEdge("Arendelle","Monstropolis");
-        BreadthFirst.addEdge("Metroville","Narnia");
-        BreadthFirst.addEdge("Metroville","Naboo");
-        BreadthFirst.addEdge("Monstropolis","Naboo");
-        BreadthFirst.addEdge("Narnia","Naboo");
+        businessTrip.addEdge("Pandora","Arendelle",150);
+        businessTrip.addEdge("Arendelle","Metroville", 99);
+        businessTrip.addEdge("Pandora","Metroville", 82);
+        businessTrip.addEdge("Arendelle","Monstropolis", 42);
+        businessTrip.addEdge("Metroville","Monstropolis", 105);
+        businessTrip.addEdge("Metroville","Narnia", 37);
+        businessTrip.addEdge("Metroville","Naboo", 26);
+        businessTrip.addEdge("Monstropolis","Naboo", 73);
+        businessTrip.addEdge("Narnia","Naboo", 250);
 
-
-        System.out.println("Neighbors of node A : "+BreadthFirst.getNeighbors("Pandora"));
-        System.out.println("Neighbors of node b : "+BreadthFirst.getNeighbors("Arendelle"));
-        System.out.println("Neighbors of node c : "+BreadthFirst.getNeighbors("Metroville"));
-        System.out.println("Neighbors of node d : "+BreadthFirst.getNeighbors("Monstropolis"));
-        System.out.println("Neighbors of node e : "+BreadthFirst.getNeighbors("Narnia"));
-        System.out.println("Neighbors of node f : "+BreadthFirst.getNeighbors("Naboo"));
-        System.out.println("\nBreadth First Start with node" + " 'Pandora'" + ":");
-        BreadthFirst.breadthFirst(a);
         System.out.println("\n\n");
+        String[] trip1 = {"Metroville" , "Pandora"};
+        String[] trip2 = {"Arendelle" , "Monstropolis", "Naboo"};
+        String[] trip3 = {"Naboo" , "Pandora"};
+        String[] trip4 = {"Narnia" , "Arendelle", "Naboo"};
+        System.out.println("Trip1= {\"Metroville\" , \"Pandora\"}\n "+businessTrip.businessTrip(trip1));
+        System.out.println("\n Trip2 = {\"Arendelle\" , \"Monstropolis\", \"Naboo\"}\n"+businessTrip.businessTrip(trip2));
+        System.out.println("\n Trip3 = {\"Naboo\" , \"Pandora\"} \n"+businessTrip.businessTrip(trip3));
+        System.out.println("\n Trip4 = {\"Narnia\" , \"Arendelle\", \"Naboo\"}\n"+businessTrip.businessTrip(trip4));
+
     }
 }

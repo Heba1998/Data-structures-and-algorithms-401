@@ -11,60 +11,90 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test
-    void EmptyGraphTest(){
-        Graph graph = new Graph();
-        assertEquals(null, graph.toString());
-        assertEquals(0, graph.size());
-    }
+//    @Test
+//    void EmptyGraphTest(){
+//        Graph graph = new Graph();
+//        assertEquals(null, graph.toString());
+//        assertEquals(0, graph.size());
+//    }
+//
+//
+//    @Test
+//    void GraphAdd(){
+//        Graph graph = new Graph();
+//        graph.addNode("1");
+//        graph.addNode("2");
+//        graph.addNode("3");
+//        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]", graph.getNodes().toString());
+//        assertEquals(3, graph.size());
+//    }
+//
+//    @Test void GraphAddEdge(){
+//
+//        Graph graph = new Graph();
+//        graph.addNode("1");
+//        graph.addNode("2");
+//        graph.addNode("3");
+//
+//        graph.addEdge("1", "2");
+//        graph.addEdge("2", "3");
+//        graph.addEdge("3", "1");
+//        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]",graph.getNodes().toString());
+//        assertEquals(3, graph.size());
+//
+//
+//    }
+//
+//
+//    @Test void BreadthFirstTest(){
+//        Graph BreadthFirst = new Graph();
+//        Node a = BreadthFirst.addNode("Pandora");
+//        Node b =  BreadthFirst.addNode("Arendelle");
+//        Node c = BreadthFirst.addNode("Metroville");
+//        Node d = BreadthFirst.addNode("Monstropolis");
+//        Node e = BreadthFirst.addNode("Narnia");
+//        Node f = BreadthFirst.addNode("Naboo");
+//
+//        BreadthFirst.addEdge("Pandora","Arendelle");
+//        BreadthFirst.addEdge("Arendelle","Metroville");
+//        BreadthFirst.addEdge("Arendelle","Monstropolis");
+//        BreadthFirst.addEdge("Metroville","Narnia");
+//        BreadthFirst.addEdge("Metroville","Naboo");
+//        BreadthFirst.addEdge("Monstropolis","Naboo");
+//        BreadthFirst.addEdge("Narnia","Naboo");
+//
+//        assertEquals("[Graph{label='Pandora', weight=0}, Graph{label='Arendelle', weight=0}, Graph{label='Metroville', weight=0}, Graph{label='Monstropolis', weight=0}, Graph{label='Narnia', weight=0}, Graph{label='Naboo', weight=0}]",BreadthFirst.breadthFirst(a).toString());
+//
+//    }
+@Test void businessTrip() {
+    Graph businessTrip = new Graph();
+    Node a = businessTrip.addNode("Pandora");
+    Node b = businessTrip.addNode("Arendelle");
+    Node c = businessTrip.addNode("Metroville");
+    Node d = businessTrip.addNode("Monstropolis");
+    Node e = businessTrip.addNode("Narnia");
+    Node f = businessTrip.addNode("Naboo");
 
+    businessTrip.addEdge("Pandora", "Arendelle", 150);
+    businessTrip.addEdge("Arendelle", "Metroville", 99);
+    businessTrip.addEdge("Pandora", "Metroville", 82);
+    businessTrip.addEdge("Arendelle", "Monstropolis", 42);
+    businessTrip.addEdge("Metroville", "Monstropolis", 105);
+    businessTrip.addEdge("Metroville", "Narnia", 37);
+    businessTrip.addEdge("Metroville", "Naboo", 26);
+    businessTrip.addEdge("Monstropolis", "Naboo", 73);
+    businessTrip.addEdge("Narnia", "Naboo", 250);
 
-    @Test
-    void GraphAdd(){
-        Graph graph = new Graph();
-        graph.addNode("1");
-        graph.addNode("2");
-        graph.addNode("3");
-        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]", graph.getNodes().toString());
-        assertEquals(3, graph.size());
-    }
+    System.out.println("\n\n");
+    String[] trip1 = {"Metroville", "Pandora"};
+    String[] trip2 = {"Arendelle", "Monstropolis", "Naboo"};
+    String[] trip3 = {"Naboo", "Pandora"};
+    String[] trip4 = {"Narnia", "Arendelle", "Naboo"};
 
-    @Test void GraphAddEdge(){
+    assertEquals("True,$82" , businessTrip.businessTrip(trip1));
+    assertEquals("True,$115" , businessTrip.businessTrip(trip2));
+    assertEquals("False,$0" , businessTrip.businessTrip(trip3));
+    assertEquals("False,$0" , businessTrip.businessTrip(trip4));
 
-        Graph graph = new Graph();
-        graph.addNode("1");
-        graph.addNode("2");
-        graph.addNode("3");
-
-        graph.addEdge("1", "2");
-        graph.addEdge("2", "3");
-        graph.addEdge("3", "1");
-        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]",graph.getNodes().toString());
-        assertEquals(3, graph.size());
-
-
-    }
-
-
-    @Test void BreadthFirstTest(){
-        Graph BreadthFirst = new Graph();
-        Node a = BreadthFirst.addNode("Pandora");
-        Node b =  BreadthFirst.addNode("Arendelle");
-        Node c = BreadthFirst.addNode("Metroville");
-        Node d = BreadthFirst.addNode("Monstropolis");
-        Node e = BreadthFirst.addNode("Narnia");
-        Node f = BreadthFirst.addNode("Naboo");
-
-        BreadthFirst.addEdge("Pandora","Arendelle");
-        BreadthFirst.addEdge("Arendelle","Metroville");
-        BreadthFirst.addEdge("Arendelle","Monstropolis");
-        BreadthFirst.addEdge("Metroville","Narnia");
-        BreadthFirst.addEdge("Metroville","Naboo");
-        BreadthFirst.addEdge("Monstropolis","Naboo");
-        BreadthFirst.addEdge("Narnia","Naboo");
-        
-        assertEquals("[Graph{label='Pandora', weight=0}, Graph{label='Arendelle', weight=0}, Graph{label='Metroville', weight=0}, Graph{label='Monstropolis', weight=0}, Graph{label='Narnia', weight=0}, Graph{label='Naboo', weight=0}]",BreadthFirst.breadthFirst(a).toString());
-
-    }
-
+}
 }
