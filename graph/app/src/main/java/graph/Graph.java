@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Graph {
     public final Map<Node, List<Node>> AdjacentNode;
+    public Map<String , Integer> weightList = new HashMap<>();
+
 
     public Graph() {
         this.AdjacentNode =  new HashMap<>();;
@@ -13,14 +15,16 @@ public class Graph {
         AdjacentNode.put(NewNode, new ArrayList<>());
         return NewNode;
     }
-    public void addEdge(String Value1, String value2) {
+    public void addEdge(String Value1, String value2, int weight) {
         Node NewNode1 = new Node(Value1);
         Node NewNode2 = new Node(value2);
 
         AdjacentNode.get(NewNode1).add(NewNode2);
         AdjacentNode.get(NewNode2).add(NewNode1);
-
+          weightList.put(Value1 +value2 , weight);
+          weightList.put(value2 + Value1 , weight);
     }
+
 
     public Set<Node> getNodes(){
         return AdjacentNode.keySet();
@@ -63,8 +67,19 @@ public class Graph {
         System.out.print(list.get(i).data);
         return list;
     }
-    
 
+
+    public String businessTrip(String [] placeList) {
+        int cost = 0;
+        for (int i = 0; i < placeList.length -1; i++) {
+            if (getNeighbors(placeList[i]).contains(new Node<>(placeList[i+1]))) {
+                cost += weightList.get(placeList[i] +placeList[i+1]);
+            } else {
+                return "False,$0";
+            }
+        }
+        return "True"+",$" + cost ;
+    }
 
     @Override
     public String toString() {

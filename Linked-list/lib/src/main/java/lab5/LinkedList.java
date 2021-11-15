@@ -175,4 +175,39 @@ temp.next=prev;
         return true;
     }
 
+
+    public boolean sortedList11(LinkedList linkedList){
+        Node current = head;
+        if (head == null ) {
+            return false;
+        }
+        while (current != null) {
+
+            while (current.value > current.next.value){
+                current = current.next;
+
+            }
+            current = current.next;
+        }
+        return true;
+
+    }
+
+
+    public LinkedList deleteDublicated (LinkedList linkedList) {
+
+        Node current = head ;
+        Node prev= current.next ;
+        while (current != null ) {
+            if (prev.value == current.value){
+                prev.next= prev.next.next;
+                current = current.next;
+            }
+            prev = current;
+            current = current.next;
+        }
+        return linkedList;
+    }
+
+
 }

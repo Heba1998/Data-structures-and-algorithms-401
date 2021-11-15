@@ -110,3 +110,46 @@ scape : O(n) `create new list and Set`
 * **Solution:**
 
 ![](image/out36.png)
+
+
+
+
+
+## **Business Trip**
+
+# Challenge Summary
+* *Write a function called business trip,Determine whether the trip is possible with direct flights, and how much it would cost.*
+     * Arguments: graph, array of city names
+     * Return: cost or null
+
+
+## Whiteboard Process
+![](image/Whiteboard37.png)
+
+## Approach & Efficiency
+time : O(n) `loop`
+
+scape : O(1)
+
+## Solution
+
+* **code**
+
+```java
+     public String businessTrip(String [] placeList) {
+        int cost = 0;
+        for (int i = 0; i < placeList.length -1; i++) {
+        if (getNeighbors(placeList[i]).contains(new Node<>(placeList[i+1]))) {
+        cost += weightList.get(placeList[i] +placeList[i+1]);
+        } else {
+        return "False,$0";
+        }
+        }
+        return "True"+",$" + cost ;
+        }
+```
+
+
+* **Solution:**
+
+![](image/out37.png)
