@@ -18,10 +18,7 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return "Graph{" +
-                "label='" + data + '\'' + ',' +
-                " weight=" + weight +
-                '}';
+        return  data;
     }
 
     @Override

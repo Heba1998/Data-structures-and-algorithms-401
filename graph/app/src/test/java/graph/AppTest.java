@@ -97,4 +97,31 @@ class AppTest {
     assertEquals("False,$0" , businessTrip.businessTrip(trip4));
 
 }
+
+
+@Test void DepthFirst() {
+
+    Graph DepthFirst = new Graph();
+    Node a = DepthFirst.addNode("A");
+    Node b =  DepthFirst.addNode("B");
+    Node c = DepthFirst.addNode("C");
+    Node d = DepthFirst.addNode("D");
+    Node e = DepthFirst.addNode("E");
+    Node f = DepthFirst.addNode("F");
+    Node g = DepthFirst.addNode("G");
+    Node h = DepthFirst.addNode("H");
+
+    DepthFirst.addEdge("A","B",0);
+    DepthFirst.addEdge("A","D", 0);
+    DepthFirst.addEdge("B","C", 0);
+    DepthFirst.addEdge("B","D", 0);
+    DepthFirst.addEdge("C","G", 0);
+    DepthFirst.addEdge("D","E", 0);
+    DepthFirst.addEdge("D","H", 0);
+    DepthFirst.addEdge("D","F", 0);
+    DepthFirst.addEdge("F","H", 0);
+
+    assertEquals("[A, D, F, H, E, B, C, G]" , DepthFirst.DepthFirst(a).toString());
+
+    }
 }
