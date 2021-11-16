@@ -153,3 +153,56 @@ scape : O(1)
 * **Solution:**
 
 ![](image/out37.png)
+
+
+
+
+## **Graph Depth First**
+
+# Challenge Summary
+* *Write the following method for the Graph class:*
+    * Name: Depth first
+    * Arguments: Node (Starting point of search)
+    * Return: A collection of nodes in their pre-order depth-first traversal order
+    * Program output: Display the collection
+
+
+## Whiteboard Process
+![](image/Codechallenge38.png)
+
+## Approach & Efficiency
+time : O(n^2) `neasted loop`
+
+scape : O(n)  
+
+## Solution
+
+* **code**
+
+```java
+      public List<Node> DepthFirst(Node root) {
+        if (root == null) return null;
+
+        List<Node> vertices = new ArrayList<>();
+        Stack depth = new Stack();
+        Set<Node> visited = new HashSet<>();
+
+        depth.push(root);
+
+        while (!depth.isEmpty()) {
+        Node top = (Node) depth.pop();
+        if (!visited.contains(top)) {
+        visited.add(top);
+        vertices.add(top);
+        for (Node neighbor : getNeighbors(top.data)) {
+        depth.push(neighbor);}
+             }
+          }
+        return vertices;
+        }
+```
+
+
+* **Output:**
+
+![](image/out38.png)

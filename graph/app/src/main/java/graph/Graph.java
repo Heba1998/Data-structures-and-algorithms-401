@@ -81,11 +81,37 @@ public class Graph {
         return "True"+",$" + cost ;
     }
 
+
+    public List<Node> DepthFirst(Node root) {
+        if (root == null) return null;
+
+        List<Node> vertices = new ArrayList<>();
+        Stack depth = new Stack();
+        Set<Node> visited = new HashSet<>();
+
+        depth.push(root);
+
+        while (!depth.isEmpty()) {
+            Node top = (Node) depth.pop();
+            if (!visited.contains(top)) {
+                visited.add(top);
+                vertices.add(top);
+                for (Node neighbor : getNeighbors(top.data)) {
+                    depth.push(neighbor);
+                }
+            }
+        }
+        return vertices;
+    }
+
+
+
     @Override
     public String toString() {
         if (AdjacentNode.isEmpty()) return null;
         return "" + AdjacentNode;
     }
+
 
 
 }
