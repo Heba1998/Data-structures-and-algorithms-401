@@ -105,6 +105,21 @@ public class Graph {
     }
 
 
+    static void addEdge1(ArrayList<ArrayList<Integer>> list, int value1, int value2) {
+            list.get(value1).add(value2);
+            list.get(value2).add(value1);
+    }
+
+
+    static void Matrix(ArrayList<ArrayList<Integer> > list) {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.print(i+"|");
+                for (int j = 0; j < list.get(i).size(); j++) {
+                    System.out.print(" -> "+list.get(i).get(j));
+                }
+                System.out.println();
+            }
+    }
 
     @Override
     public String toString() {
