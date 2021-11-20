@@ -3,6 +3,8 @@
  */
 package graph;
 
+import java.util.ArrayList;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -95,26 +97,50 @@ public class App {
 
 
 
-        Graph DepthFirst = new Graph();
-        Node a = DepthFirst.addNode("A");
-        Node b =  DepthFirst.addNode("B");
-        Node c = DepthFirst.addNode("C");
-        Node d = DepthFirst.addNode("D");
-        Node e = DepthFirst.addNode("E");
-        Node f = DepthFirst.addNode("F");
-        Node g = DepthFirst.addNode("G");
-        Node h = DepthFirst.addNode("H");
+//        Graph DepthFirst = new Graph();
+//        Node a = DepthFirst.addNode("A");
+//        Node b =  DepthFirst.addNode("B");
+//        Node c = DepthFirst.addNode("C");
+//        Node d = DepthFirst.addNode("D");
+//        Node e = DepthFirst.addNode("E");
+//        Node f = DepthFirst.addNode("F");
+//        Node g = DepthFirst.addNode("G");
+//        Node h = DepthFirst.addNode("H");
+//
+//        DepthFirst.addEdge("A","B",0);
+//        DepthFirst.addEdge("A","D", 0);
+//        DepthFirst.addEdge("B","C", 0);
+//        DepthFirst.addEdge("B","D", 0);
+//        DepthFirst.addEdge("C","G", 0);
+//        DepthFirst.addEdge("D","E", 0);
+//        DepthFirst.addEdge("D","H", 0);
+//        DepthFirst.addEdge("D","F", 0);
+//        DepthFirst.addEdge("F","H", 0);
+//
+//        System.out.println("Code challenge 38 => Out put: "+DepthFirst.DepthFirst(a));
+//
+//
 
-        DepthFirst.addEdge("A","B",0);
-        DepthFirst.addEdge("A","D", 0);
-        DepthFirst.addEdge("B","C", 0);
-        DepthFirst.addEdge("B","D", 0);
-        DepthFirst.addEdge("C","G", 0);
-        DepthFirst.addEdge("D","E", 0);
-        DepthFirst.addEdge("D","H", 0);
-        DepthFirst.addEdge("D","F", 0);
-        DepthFirst.addEdge("F","H", 0);
 
-        System.out.println("Code challenge 38 => Out put: "+DepthFirst.DepthFirst(a));
+
+
+
+
+        Graph code = new Graph();
+        int vertices = 6;
+        ArrayList<ArrayList<Integer>> list
+                = new ArrayList<>(vertices);
+
+        for (int i = 0; i < vertices; i++)
+            list.add(new ArrayList<Integer>());
+
+        code.addEdge1(list, 1, 2);
+        code.addEdge1(list, 1, 5);
+        code.addEdge1(list, 2, 3);
+        code.addEdge1(list, 2, 4);
+        code.addEdge1(list, 3, 4);
+        code.addEdge1(list, 4, 5);
+
+        code.Matrix(list);
     }
 }
