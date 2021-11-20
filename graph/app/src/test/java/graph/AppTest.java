@@ -11,61 +11,63 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-//    @Test
-//    void EmptyGraphTest(){
-//        Graph graph = new Graph();
-//        assertEquals(null, graph.toString());
-//        assertEquals(0, graph.size());
-//    }
+    @Test
+    void EmptyGraphTest(){
+        Graph graph = new Graph();
+        assertEquals(null, graph.toString());
+        assertEquals(0, graph.size());
+    }
 //
-//
-//    @Test
-//    void GraphAdd(){
-//        Graph graph = new Graph();
-//        graph.addNode("1");
-//        graph.addNode("2");
-//        graph.addNode("3");
-//        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]", graph.getNodes().toString());
-//        assertEquals(3, graph.size());
-//    }
-//
-//    @Test void GraphAddEdge(){
-//
-//        Graph graph = new Graph();
-//        graph.addNode("1");
-//        graph.addNode("2");
-//        graph.addNode("3");
-//
-//        graph.addEdge("1", "2");
-//        graph.addEdge("2", "3");
-//        graph.addEdge("3", "1");
-//        assertEquals("[Graph{label='1', weight=0}, Graph{label='2', weight=0}, Graph{label='3', weight=0}]",graph.getNodes().toString());
-//        assertEquals(3, graph.size());
-//
-//
-//    }
-//
-//
-//    @Test void BreadthFirstTest(){
-//        Graph BreadthFirst = new Graph();
-//        Node a = BreadthFirst.addNode("Pandora");
-//        Node b =  BreadthFirst.addNode("Arendelle");
-//        Node c = BreadthFirst.addNode("Metroville");
-//        Node d = BreadthFirst.addNode("Monstropolis");
-//        Node e = BreadthFirst.addNode("Narnia");
-//        Node f = BreadthFirst.addNode("Naboo");
-//
-//        BreadthFirst.addEdge("Pandora","Arendelle");
-//        BreadthFirst.addEdge("Arendelle","Metroville");
-//        BreadthFirst.addEdge("Arendelle","Monstropolis");
-//        BreadthFirst.addEdge("Metroville","Narnia");
-//        BreadthFirst.addEdge("Metroville","Naboo");
-//        BreadthFirst.addEdge("Monstropolis","Naboo");
-//        BreadthFirst.addEdge("Narnia","Naboo");
-//
-//        assertEquals("[Graph{label='Pandora', weight=0}, Graph{label='Arendelle', weight=0}, Graph{label='Metroville', weight=0}, Graph{label='Monstropolis', weight=0}, Graph{label='Narnia', weight=0}, Graph{label='Naboo', weight=0}]",BreadthFirst.breadthFirst(a).toString());
-//
-//    }
+
+    @Test
+    void GraphAdd(){
+        Graph graph = new Graph();
+        graph.addNode("1");
+        graph.addNode("2");
+        graph.addNode("3");
+        assertEquals("[1, 2, 3]", graph.getNodes().toString());
+        assertEquals(3, graph.size());
+    }
+
+    @Test void GraphAddEdge(){
+
+        Graph graph = new Graph();
+        graph.addNode("1");
+        graph.addNode("2");
+        graph.addNode("3");
+
+        graph.addEdge("1", "2",0);
+        graph.addEdge("2", "3",0);
+        graph.addEdge("3", "1",0);
+        assertEquals("[1, 2, 3]",graph.getNodes().toString());
+        assertEquals(3, graph.size());
+
+
+    }
+
+
+    @Test void BreadthFirstTest(){
+        Graph BreadthFirst = new Graph();
+        Node a = BreadthFirst.addNode("Pandora");
+        Node b =  BreadthFirst.addNode("Arendelle");
+        Node c = BreadthFirst.addNode("Metroville");
+        Node d = BreadthFirst.addNode("Monstropolis");
+        Node e = BreadthFirst.addNode("Narnia");
+        Node f = BreadthFirst.addNode("Naboo");
+
+        BreadthFirst.addEdge("Pandora","Arendelle",0);
+        BreadthFirst.addEdge("Arendelle","Metroville",0);
+        BreadthFirst.addEdge("Arendelle","Monstropolis",0);
+        BreadthFirst.addEdge("Metroville","Narnia",0);
+        BreadthFirst.addEdge("Metroville","Naboo",0);
+        BreadthFirst.addEdge("Monstropolis","Naboo",0);
+        BreadthFirst.addEdge("Narnia","Naboo",0);
+
+        assertEquals("[Pandora, Arendelle, Metroville, Monstropolis, Narnia, Naboo]",BreadthFirst.breadthFirst(a).toString());
+    }
+
+
+
 @Test void businessTrip() {
     Graph businessTrip = new Graph();
     Node a = businessTrip.addNode("Pandora");
