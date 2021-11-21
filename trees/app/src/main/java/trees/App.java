@@ -15,38 +15,62 @@ public class App {
         binarySearchTree.Add(90);
         binarySearchTree.Add(80);
 
-
-        System.out.println("Preorder result: " + binarySearchTree.preOrder(binarySearchTree.root));
-        System.out.println("InOrder result: " + binarySearchTree.inOrder(binarySearchTree.root));
-        System.out.println("Postorder result: " + binarySearchTree.postOrder(binarySearchTree.root));
-
-        System.out.println("___________________________________________________________________________");
-        System.out.println("The tree contains 90? " + binarySearchTree.contains(90));
-        System.out.println("The tree contains 100? " + binarySearchTree.contains(100));
-        System.out.println("The tree contains 50? " + binarySearchTree.contains(50));
-        System.out.println("The tree contains 10? " + binarySearchTree.contains(10));
-
-        System.out.println("___________________________________MaxValue________________________________________");
-        System.out.println("The Maximum Value in a Binary Tree: " + binarySearchTree.MaxValue(binarySearchTree.root));
-
-
-        System.out.println("\n\n___________________________________ Breadth First ________________________________________");
-        System.out.println(binarySearchTree.BreadthFirst(binarySearchTree.root));
+//        System.out.println("Preorder result: " + binarySearchTree.preOrder(binarySearchTree.root));
+//        System.out.println("InOrder result: " + binarySearchTree.inOrder(binarySearchTree.root));
+//        System.out.println("Postorder result: " + binarySearchTree.postOrder(binarySearchTree.root));
+//
+//        System.out.println("___________________________________________________________________________");
+//        System.out.println("The tree contains 90? " + binarySearchTree.contains(90));
+//        System.out.println("The tree contains 100? " + binarySearchTree.contains(100));
+//        System.out.println("The tree contains 50? " + binarySearchTree.contains(50));
+//        System.out.println("The tree contains 10? " + binarySearchTree.contains(10));
+//
+//        System.out.println("___________________________________MaxValue________________________________________");
+//        System.out.println("The Maximum Value in a Binary Tree: " + binarySearchTree.MaxValue(binarySearchTree.root));
+//
+//
+//        System.out.println("\n\n___________________________________ Breadth First ________________________________________");
+//        System.out.println(binarySearchTree.BreadthFirst(binarySearchTree.root));
 
 
         System.out.println("\n\n___________________________________ Fizz-Buzz Tree ________________________________________\n");
         FizzBuzzTree tree = new FizzBuzzTree();
         tree.root = new KNode(1);
         tree.root.left = new KNode(3);
-        tree.root.right = new KNode(2);
+        tree.root.right = new KNode(6);
         tree.root.left.left = new KNode(5);
         tree.root.left.right = new KNode(88);
-        tree.root.right.left = new KNode(15);
+//        tree.root.right.left = new KNode(15);
         tree.root.right.right = new KNode(50);
-        System.out.println("Tree before Apply FizzBuzz function👇\n");
-        tree.printPreorderA(tree.root);
+        tree.root.right.right.left = new KNode(2);
+        tree.root.right.left = new KNode(15);
+        tree.root.right.left.left = new KNode(217);
+
         System.out.println("\n\nTree After Apply FizzBuzz function👇\n");
         tree.preorder(tree.root);
         System.out.println("\n_____________________________________________________________________________________________\n\n\n");
+
+
+
+
+   Exam test = new Exam();
+   test.insert(10);
+   test.insert(8);
+   test.insert(6);
+   test.insert(15);
+   test.insert(16);
+   test.insert(17);
+
+        System.out.println(test.preOrder(test.root));
+
+        System.out.println(test.contain(10));
+        System.out.println(test.contain(11));
+        System.out.println(test.contain(17));
+        System.out.println("max for binary search tree => " + test.MaxBst());
+        System.out.println("max for binary tree  => " + test.MaxValue(test.root));
+
+        System.out.println("BreadthFirstBST =>"+test.BreadthFirstBST(test.root));
+
+
     }
 }

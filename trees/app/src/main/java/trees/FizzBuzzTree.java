@@ -21,15 +21,6 @@ public class FizzBuzzTree {
 
     }
 
-    void printPreorderA(KNode node)
-    {
-        if (node == null)
-            return;
-        System.out.print(node.data + " ");
-        printPreorderA(node.left);
-        printPreorderA(node.right);
-    }
-
     @Override
     public String toString() {
         return "FizzBuzzTree{" +
@@ -37,3 +28,28 @@ public class FizzBuzzTree {
                 '}';
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
