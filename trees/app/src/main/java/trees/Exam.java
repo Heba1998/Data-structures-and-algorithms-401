@@ -127,6 +127,25 @@ public class Exam {
         }
         else return null;
     }
+
+
+
+    static String YearToRoman(int n) {
+        String[] roman = { "M",  "CM", "D", "CD", "C", "XC", "L",  "X", "IX", "V", "I" };
+        int[] Nums = {  1000, 900, 500,  400 , 100,  90,  50,   10,    9,   5,   1 };
+        String finalNum = "";
+        for (int i = 0; i < Nums.length; i ++) {
+            int currentNum = n /Nums[i];
+            if (currentNum==0) {
+                continue;
+            }
+            for (int j = 0; j < currentNum; j++) {
+                finalNum +=roman[i];
+            }
+            n = n%Nums[i];
+        }
+        return finalNum;
+    }
 }
 
 

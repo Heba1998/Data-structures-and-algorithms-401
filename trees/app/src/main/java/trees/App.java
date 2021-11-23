@@ -7,13 +7,13 @@ package trees;
 public class App {
 
     public static void main(String[] args) {
-        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-        binarySearchTree.Add(50);
-        binarySearchTree.Add(10);
-        binarySearchTree.Add(60);
-        binarySearchTree.Add(30);
-        binarySearchTree.Add(90);
-        binarySearchTree.Add(80);
+//        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+//        binarySearchTree.Add(50);
+//        binarySearchTree.Add(10);
+//        binarySearchTree.Add(60);
+//        binarySearchTree.Add(30);
+//        binarySearchTree.Add(90);
+//        binarySearchTree.Add(80);
 
 //        System.out.println("Preorder result: " + binarySearchTree.preOrder(binarySearchTree.root));
 //        System.out.println("InOrder result: " + binarySearchTree.inOrder(binarySearchTree.root));
@@ -33,44 +33,54 @@ public class App {
 //        System.out.println(binarySearchTree.BreadthFirst(binarySearchTree.root));
 
 
-        System.out.println("\n\n___________________________________ Fizz-Buzz Tree ________________________________________\n");
-        FizzBuzzTree tree = new FizzBuzzTree();
-        tree.root = new KNode(1);
-        tree.root.left = new KNode(3);
-        tree.root.right = new KNode(6);
-        tree.root.left.left = new KNode(5);
-        tree.root.left.right = new KNode(88);
+//        System.out.println("\n\n___________________________________ Fizz-Buzz Tree ________________________________________\n");
+//        FizzBuzzTree tree = new FizzBuzzTree();
+//        tree.root = new KNode(1);
+//        tree.root.left = new KNode(3);
+//        tree.root.right = new KNode(6);
+//        tree.root.left.left = new KNode(5);
+//        tree.root.left.right = new KNode(88);
+////        tree.root.right.left = new KNode(15);
+//        tree.root.right.right = new KNode(50);
+//        tree.root.right.right.left = new KNode(2);
 //        tree.root.right.left = new KNode(15);
-        tree.root.right.right = new KNode(50);
-        tree.root.right.right.left = new KNode(2);
-        tree.root.right.left = new KNode(15);
-        tree.root.right.left.left = new KNode(217);
-
-        System.out.println("\n\nTree After Apply FizzBuzz function👇\n");
-        tree.preorder(tree.root);
-        System.out.println("\n_____________________________________________________________________________________________\n\n\n");
-
-
-
-
+//        tree.root.right.left.left = new KNode(217);
+//
+//        System.out.println("\n\nTree After Apply FizzBuzz function👇\n");
+//        tree.preorder(tree.root);
+//        System.out.println("\n_____________________________________________________________________________________________\n\n\n");
+//
+//
+//
+//
    Exam test = new Exam();
-   test.insert(10);
-   test.insert(8);
-   test.insert(6);
-   test.insert(15);
-   test.insert(16);
-   test.insert(17);
+//   test.insert(10);
+//   test.insert(8);
+//   test.insert(6);
+//   test.insert(15);
+//   test.insert(16);
+//   test.insert(17);
+        test.root=new ExamNode(2);
+        test.root.left=new ExamNode(5);
+        test.root.right=new ExamNode(1);
+        test.root.left.right=new ExamNode(44);
+        test.root.left.left=new ExamNode(9);
+        test.root.right.right=new ExamNode(8);
+        test.root.right.left=new ExamNode(16);
+
 
         System.out.println(test.preOrder(test.root));
 
         System.out.println(test.contain(10));
         System.out.println(test.contain(11));
         System.out.println(test.contain(17));
-        System.out.println("max for binary search tree => " + test.MaxBst());
+//        System.out.println("max for binary search tree => " + test.MaxBst());
         System.out.println("max for binary tree  => " + test.MaxValue(test.root));
 
-        System.out.println("BreadthFirstBST =>"+test.BreadthFirstBST(test.root));
+//        System.out.println("BreadthFirstBST =>"+test.BreadthFirstBST(test.root));
+//
 
 
+        System.out.println("code challenge 43 => "+Exam.YearToRoman(2020) );
     }
 }
